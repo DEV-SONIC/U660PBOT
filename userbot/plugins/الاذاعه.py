@@ -5,8 +5,8 @@ from ..Config import Config
 LGROUP_CMD = Config.LGROUP_CMD or "للكروبات"
 LPRIV_CMD = Config.LPRIV_CMD or "للخاص"
 GCAST_BLACKLIST = [
-    -1001118102804,
-    -1001161919602,
+    -1001571410362,
+    -1001571410362,
     ]
 #
 
