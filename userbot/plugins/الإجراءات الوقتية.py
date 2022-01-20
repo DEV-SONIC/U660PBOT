@@ -14,7 +14,7 @@ plugin_category = "admin"
 # =================== CONSTANT ===================
 NO_ADMIN = "**▾↫ عذرًا انا لست مشرفًا هنا! **"
 NO_PERM = "**▾↫ عذرًا احتاج الى صلاحيات! **"
-# for ~ @Jmthon ~ @RR7PP
+
 
 
 @jmthon.on(admin_cmd(pattern="قيده(?:\s|$)([\s\S]*)"))

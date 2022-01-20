@@ -12,7 +12,7 @@ from userbot import jmthon
 from userbot.utils import admin_cmd
 
 @jmthon.on(admin_cmd(pattern="اكس او$"))
-# كتابة وتعديل فريق جمثون  #@RR7PP
+# كتابة وتعديل فريق سونيك  #@U660P
 async def gamez(event):
     if event.fwd_from:
         return

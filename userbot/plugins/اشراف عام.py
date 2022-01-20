@@ -32,7 +32,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("▾∮ هنالك خطأ يرجى تبليغنا @JMTHON", str(err))
+            return await event.edit("▾∮ هنالك خطأ يرجى تبليغنا @U660P", str(err))
     return user_obj, extra
 
 
@@ -113,7 +113,7 @@ async def gben(userbot):
     i = 0
     await dc.get_sender()
     me = await userbot.client.get_me()
-    await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
+    await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الجروبات**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()

@@ -170,7 +170,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    roz = await edit_or_reply(promt, "** • يتم الرفع انتظر لحضه  **")
+    roz = await edit_or_reply(promt, "** • يتم الرفع انتظر لحظه  **")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "مشرف مميز"
@@ -200,7 +200,7 @@ async def demote(dmodroz):
     if not admin and not creator:
         await dmodroz.edit(NO_ADMIN)
         return
-    await dmodroz.edit("• يتم التنزيل انتظر لحضه ")
+    await dmodroz.edit("• يتم التنزيل انتظر لحظه ")
     rank = "Admeen"  # dummy rank, lol.
     user = await get_user_from_event(dmodroz)
     user = user[0]
@@ -438,7 +438,7 @@ async def _ban_person(event):
                 f"الحـظر\
                 \nالمسـتخدم: [{user.first_name}](tg://user?id={user.id})\
                 \nالـدردشـة: {event.chat.title}\
-                \nايدي الكروب(`{event.chat_id}`)\
+                \nايدي الجروب(`{event.chat_id}`)\
                 \nالسبـب : {reason}",
             )
         else:
@@ -687,4 +687,4 @@ async def pin(event):
         )
 
 
-"""  جمثون يابة  """
+"""  سونيك يابة  """

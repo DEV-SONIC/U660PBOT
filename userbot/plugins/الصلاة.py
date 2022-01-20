@@ -1,14 +1,14 @@
-# ترجمه فريق جمثون على التيلكرام
+# ترجمه فريق سونيك على التيلكرام
 import json
 
 import requests
 
-# ترجمه فريق جمثون على التيلكرام
+# ترجمه فريق سونيك على التيلكرام
 from . import edit_delete, edit_or_reply, jmthon
 
 plugin_category = "extra"
 
-# ترجمه فريق جمثون على التيلكرام
+# ترجمه فريق سونيك على التيلكرام
 @jmthon.ar_cmd(
     pattern="صلاة(?: |$)(.*)",
     command=("صلاة", plugin_category),
@@ -16,7 +16,7 @@ plugin_category = "extra"
         "header": "Shows you the Islamic prayer times of the given city name.",
         "note": "you can set default city by using {tr}setcity command.",
         "usage": "{tr}صلاه <المحافظه>",
-        "examples": "{tr}صلاه baghdad ",
+        "examples": "{tr}صلاه Cairo ",
     },
 )
 async def get_adzan(adzan):
@@ -28,7 +28,7 @@ async def get_adzan(adzan):
             adzan,
             f"** لم يـتم العثور على معلومات لـهذه المدينه {LOKASI}**\n يرجى كتابة اسم محافظتك وباللغه الانكليزي ",
             5,
-        )  # ترجمه فريق جمثون على التيلكرام
+        )  # ترجمه فريق سونيك على التيلكرام
         return
     result = json.loads(request.text)
     jmthonresult = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
