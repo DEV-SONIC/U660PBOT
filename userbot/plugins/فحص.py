@@ -70,7 +70,7 @@ temp = """- {ALIVE_TEXT}
 
 **{EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
 **{EMOJI} أصـدار التـيليثون :** `{telever}`
-**{EMOJI} أصـدار جـمثون :** `{jmver}`
+**{EMOJI} أصـدار سونيك :** `{jmver}`
 **{EMOJI} الوقت:** `{uptime}` 
 **{EMOJI} أصدار البـايثون :** `{pyver}`
 **{EMOJI} المسـتخدم:** {mention}"""
