@@ -15,8 +15,6 @@ class FPOST:
 
 
 FPOST_ = FPOST()
-
-
 async def all_groups_id(roz):
     rozgroups = []
     async for dialog in roz.client.iter_dialogs():
