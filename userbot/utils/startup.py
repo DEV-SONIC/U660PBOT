@@ -65,9 +65,9 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await jmthon.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/b9ffba458034bdeed9ed2.jpg",
-                caption="⌯︙**بــوت سونيك يـعـمـل بـنـجـاح**  ✅ \n⌯︙**قـنـاة الـسـورس**  :  @U660P",
-                buttons=[(Button.url(" SONIC", "https://t.me/U660P"),)],
+                "https://telegra.ph/file/e9cd63140ffaba419db6b.jpg",
+                caption="⌯︙**بــوت سونيك يـعـمـل بـنـجـاح**  ✅ \n⌯︙**قـنـاة الـسـورس**  : @u660p ",
+                buttons=[(Button.url("جروب سونيك", "https://t.me/u660p"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -183,16 +183,16 @@ async def load_plugins(folder):
 
 async def autojo():
     try:
-        await jmthon(JoinChannelRequest("@U660P"))
+        await jmthon(JoinChannelRequest("@u660p"))
         if gvar("AUTOEO") is False:
             return
         else:
             try:
-                await jmthon(JoinChannelRequest("@U660P"))
+                await jmthon(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
             try:
-                await jmthon(JoinChannelRequest("@U660P"))
+                await jmthon(JoinChannelRequest("@RR7PP"))
             except BaseException:
                 pass
     except BaseException:
@@ -201,16 +201,16 @@ async def autojo():
 
 async def autozs():
     try:
-        await jmthon(JoinChannelRequest("@U660P"))
+        await jmthon(JoinChannelRequest("@GROUPJMTHON"))
         if gvar("AUTOZS") is False:
             return
         else:
             try:
-                await jmthon(JoinChannelRequest("@U660P"))
+                await jmthon(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
             try:
-                await jmthon(JoinChannelRequest("@U660P"))
+                await jmthon(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
     except BaseException:
@@ -246,7 +246,7 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @U660P"
+        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @u660p"
         photobt = await jmthon.upload_file(file="Jmthon/razan/resources/start/Jmthonp.jpg")
         _, groupid = await create_supergroup(
             "مجموعة اشعارات سونيك ", jmthon, Config.TG_BOT_USERNAME, descript, photobt
@@ -275,13 +275,13 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "⌯︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @U660P"
+        descript = "⌯︙ وظيفه الجروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الجروب نهائي \n  - @u660p"
         photobt = await jmthon.upload_file(file="Jmthon/razan/resources/start/Jmthonp.jpg")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", jmthon, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
-        print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
+        print("تـم عمـل الجروب التخزين بنـجاح واضافة الـفارات الـيه.")
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
