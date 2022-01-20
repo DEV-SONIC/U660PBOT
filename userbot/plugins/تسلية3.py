@@ -72,20 +72,20 @@ async def _(event):
     "animation command"
     animation_interval = 3
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "`Deploying...`")
+    event = await edit_or_reply(event, "`يتم التنصيب...`")
     animation_chars = [
-        "**Heroku Connecting To Latest Github Build **",
-        f"**Build started by user** {mention}",
-        f"**Deploy** `535a74f0` **by user** {mention}",
-        "**Restarting Heroku Server...**",
-        "**State changed from up to starting**",
-        "**Stopping all processes with SIGTERM**",
-        "**Process exited with** `status 143`",
-        "**Starting process with command** `python3 -m userbot`",
-        "**State changed from starting to up**",
-        "__INFO:Userbot:Logged in as 557667062__",
-        "__INFO:Userbot:Successfully loaded all plugins__",
-        "**Build Succeeded**",
+        "**Heroku متصل بأحدث إصدار من Github **",
+        f"**بدأ البناء من قبل المستخدم** {mention}",
+        f"**Deploy** `535a74f0` **بواسطة** {mention}",
+        "**إعادة تشغيل خادم Heroku...**",
+        "**تغيرت الحالة من ما يصل إلى البداية**",
+        "**وقف جميع العمليات مع SIGTERM**",
+        "**تم إنهاء العملية مع** `status 143`",
+        "**بدء العملية مع الأمر** `python3 -m userbot`",
+        "**تغيرت الحالة من البداية إلى الأعلى**",
+        "__INFO:Userbot:تم تسجيل الدخول باسم 557667062__",
+        "__INFO:Userbot:تم تحميل جميع اوامر الترفيه__",
+        "**نجح التنصيب**",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -628,9 +628,9 @@ async def _(event):
     "animation command"
     animation_interval = 1
     animation_ttl = range(19)
-    event = await edit_or_reply(event, "jio network boosting...")
+    event = await edit_or_reply(event, "تعزيز شبكة jio...")
     animation_chars = [
-        "`Connecting To JIO NETWORK ....`",
+        "`الاتصال بشبكة JIO NETWORK ....`",
         "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
         "`▒ ▇ ▆ ▅ ▄ ▂ ▁`",
         "`▒ ▒ ▆ ▅ ▄ ▂ ▁`",
@@ -639,7 +639,7 @@ async def _(event):
         "`▒ ▒ ▒ ▒ ▒ ▂ ▁`",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▁`",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
-        "*Optimising JIO NETWORK...*",
+        "*تحسين شبكة JIO...*",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
         "`▁ ▒ ▒ ▒ ▒ ▒ ▒`",
         "`▁ ▂ ▒ ▒ ▒ ▒ ▒`",
@@ -648,7 +648,7 @@ async def _(event):
         "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
         "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
         "`▁ ▂ ▄ ▅ ▆ ▇ █`",
-        "**JIO NETWORK Boosted....**",
+        "**تعزيز شبكة JIO....**",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -656,18 +656,18 @@ async def _(event):
 
 
 @jmthon.ar_cmd(
-    pattern="النضام الشمسي$",
-    command=("النضام الشمسي", plugin_category),
+    pattern="النظام الشمسي$",
+    command=("النظام الشمسي", plugin_category),
     info={
         "الامر": "**امر تسليه قم بالتجربه بنفسك**",
-        "الاستخدام": "{tr}النضام الشمسي",
+        "الاستخدام": "{tr}النظام الشمسي",
     },
 )
 async def _(event):
     "animation command"
     animation_interval = 0.1
     animation_ttl = range(80)
-    event = await edit_or_reply(event, "النضام الشمسي")
+    event = await edit_or_reply(event, "النظام الشمسي")
     animation_chars = [
         "`◼️◼️◼️◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️🌎◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️◼️◼️◼️`",
         "`◼️◼️◼️◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️🌎◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️◼️◼️◼️`",

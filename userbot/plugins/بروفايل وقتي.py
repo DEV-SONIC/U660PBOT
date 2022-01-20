@@ -125,7 +125,7 @@ async def _(event):
     while not downloader.isFinished():
         pass
     if gvarstatus("digitalpic") is not None and gvarstatus("digitalpic") == "true":
-        return await edit_delete(event, "**الصـورة الـوقتية شغـالة بالأصـل 🧸♥**")
+        return await edit_delete(event, "**الصـورة الـوقتية شغـالة يباشه اصلا 🧸♥**")
     addgvar("digitalpic", True)
     await edit_delete(event, "**تم تفـعيل الصـورة الـوقتية بنجـاح ✅**")
     await digitalpicloop()
@@ -138,7 +138,7 @@ async def _(event):
 async def _(event):
     "To set your display name along with time"
     if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
-        return await edit_delete(event, "**الاسـم الـوقتي شغـال بالأصـل 🧸♥**")
+        return await edit_delete(event, "**الاسـم الـوقتي شغـال يباشه اصلا 🧸♥**")
     addgvar("autoname", True)
     await edit_delete(event, "**تم تفـعيل الاسـم الـوقتي بنجـاح ✅**")
     await autoname_loop()
@@ -151,7 +151,7 @@ async def _(event):
 async def _(event):
     "To update your bio along with time"
     if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
-        return await edit_delete(event, "**الـبايو الـوقتي شغـال بالأصـل 🧸♥**")
+        return await edit_delete(event, "**الـبايو الـوقتي شغـال يباشه اصلا 🧸♥**")
     addgvar("autobio", True)
     await edit_delete(event, "**تم تفـعيل البـايو الـوقتي بنجـاح ✅**")
     await autobio_loop()

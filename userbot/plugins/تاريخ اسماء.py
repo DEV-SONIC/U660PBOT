@@ -17,7 +17,7 @@ plugin_category = "utils"
     pattern="تاريخ(معرفات)?(?: |$)(.*)",
     command=("تاريخ", plugin_category),
     info={
-        "header": "To get name history of the user.",
+        "header": "للحصول على تاريخ اسم المستخدم.",
         "flags": {
             "u": "That is sgu to get username history.",
         },

@@ -37,8 +37,8 @@ thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
     pattern="تحويل صورة$",
     command=("تحويل صورة", plugin_category),
     info={
-        "header": "Reply this command to a sticker to get image.",
-        "description": "This also converts every media to image. that is if video then extracts image from that video.if audio then extracts thumb.",
+        "header": "رد على هذا الأمر إلى ملصق للحصول على صورة.",
+        "description": "هذا أيضا يحول كل الوسائط إلى صورة. هذا إذا كان الفيديو ثم يستخرج الصورة من ذلك الصوت ثم يستخرج التمب.",
         "usage": "{tr}stoi",
     },
 )
@@ -66,8 +66,8 @@ async def _(event):
     pattern="تحويل ملصق$",
     command=("تحويل ملصق", plugin_category),
     info={
-        "header": "Reply this command to image to get sticker.",
-        "description": "This also converts every media to sticker. that is if video then extracts image from that video. if audio then extracts thumb.",
+        "header": "رد على هذا الأمر للصورة للحصول على ملصق.",
+        "description": "هذا أيضا يحول كل الوسائط إلى ملصق. هذا إذا كان الفيديو ثم يستخرج الملصق من ذلك  الصوت ثم يستخرج التمب.",
         "usage": "{tr}itos",
     },
 )
@@ -95,7 +95,7 @@ async def _(event):
     pattern="تحويل (mp3|voice)$",
     command=("تحويل", plugin_category),
     info={
-        "header": "Converts the required media file to voice or mp3 file.",
+        "header": "يحول ملف الوسائط المطلوب إلى ملف صوتي أو ملف mp3.",
         "usage": [
             "{tr}تحويل بصمة",
             "{tr}تحويل بصمة",
@@ -103,7 +103,7 @@ async def _(event):
     },
 )
 async def _(event):
-    "Converts the required media file to voice or mp3 file."
+    "يحول ملف الوسائط المطلوب إلى ملف صوتي أو ملف mp3."
     if not event.reply_to_msg_id:
         await edit_or_reply(event, "**⌯︙يـجب الـرد على اي مـلف اولا ⚠️**")
         return
@@ -120,7 +120,7 @@ async def _(event):
             reply_message,
             Config.TMP_DOWNLOAD_DIRECTORY,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, event, c_time, "trying to download")
+                progress(d, t, event, c_time, "يتم التحميل")
             ),
         )
     except Exception as e:
@@ -195,15 +195,12 @@ async def _(event):
                 voice_note=voice_note,
                 supports_streaming=supports_streaming,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, event, c_time, "trying to upload")
+                    progress(d, t, event, c_time, "يتم الرفع")
                 ),
             )
             os.remove(new_required_file_name)
             await event.delete()
 
-
-# Copyright  By  @JMTHON  © 2021
-# WRITE BY  @RR7PP
 
 
 @jmthon.on(admin_cmd(pattern="تحويل متحركة (?: |$)(.*)"))
@@ -236,7 +233,7 @@ async def _(event):
                 "**- تحـقق من انـك لم تقـم بحظر البوت @VideoToGifConverterBot .. ثم اعـد استخدام الامـر ..**"
             )
             return
-        if response.text.startswith("I can't find that"):
+        if response.text.startswith("لا استطيع ايجاده"):
             await rzevent.edit("**-**")
         else:
             await rzevent.delete()

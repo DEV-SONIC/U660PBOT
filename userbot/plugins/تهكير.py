@@ -30,7 +30,7 @@ async def _(event):
             "█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "█████████████████████▒▒▒▒ `",
             "█████████████████████████ `",
-            "- تم اختراق الضيحه وارسال جميع معلوماته في الرسائل المحفوظة\n\n فحبيبي اذا تحب اذا تبقى تكمز كل شي يمي\n\n#ترفيه",
+            "- تم اختراق الضيحه وارسال جميع معلوماته في الرسائل المحفوظة\n\nتم التهكير بنجاح",
         ]
 
         for i in animation_ttl:
@@ -42,9 +42,3 @@ async def _(event):
 
 CMD_HELP.update({"تهكير": ".تهكير \nفقط ارسل الامر الترفيه"})
 
-#  قبل لا تفكر تخمط هذا الملف ترا الملف متعوب عليه لا تخمط واني حذرتك
-# حسب قوانين موقع github https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
-# تنص على انه اي شخص ياخذ الملف بدون ذكر حقوق طبع والنشر سيتم حذف حسابه من قبل صاحب الملف اقتضى التنوي
-# Copyright ©️ 2021 RR9R7 . All Rights Reserved
-# You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits -  (  @RR7PP  - @JMTHON  )

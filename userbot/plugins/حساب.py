@@ -1,11 +1,4 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
-# All rights reserved.
-#
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
-# Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
-# ===============================================================
+
 from telethon import *
 
 from userbot import *
@@ -63,7 +56,7 @@ async def _(event):
     await event.edit(f"- مجموع رسائلك في المجموعة هي  {a.total}")
 
 
-@jmthon.on(admin_cmd(pattern="رسائل الكروب"))
+@jmthon.on(admin_cmd(pattern="رسائل الجروب"))
 async def _(event):
     b = await bot.get_messages(event.chat_id)
     await event.edit(f"- مجموع الرسائل في المجموعة هي  {b.total}")

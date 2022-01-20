@@ -125,9 +125,9 @@ async def set_pmlog(event):
         await event.edit("**⌯︙ تـخزين رسـائل الخـاص بالفـعل معـطلة ✅**")
 
 
-@jmthon.on(admin_cmd(pattern="تخزين الكروبات (تشغيل|ايقاف)$"))
+@jmthon.on(admin_cmd(pattern="تخزين الجروبات (تشغيل|ايقاف)$"))
 async def set_grplog(event):
-    "لتشغـيل او ايقـاف تخـزين رسائل الكروبات"
+    "لتشغـيل او ايقـاف تخـزين رسائل الجروبات"
     input_str = event.pattern_match.group(1)
     if input_str == "ايقاف":
         h_type = False
@@ -139,12 +139,12 @@ async def set_grplog(event):
         GRPLOG = True
     if GRPLOG:
         if h_type:
-            await event.edit("**⌯︙ تـخزين رسـائل الكروبات بالفـعل مُمكـنة ✅**")
+            await event.edit("**⌯︙ تـخزين رسـائل الجروبات بالفـعل مُمكـنة ✅**")
         else:
             addgvar("GRPLOG", h_type)
-            await event.edit("**⌯︙ تـم تعـطيل تخـزين رسائل الكروبات بنـجاح ✅**")
+            await event.edit("**⌯︙ تـم تعـطيل تخـزين رسائل الجروبات بنـجاح ✅**")
     elif h_type:
         addgvar("GRPLOG", h_type)
-        await event.edit("**⌯︙ تـم تفعيل تخـزين رسائل الكروبات بنـجاح ✅**")
+        await event.edit("**⌯︙ تـم تفعيل تخـزين رسائل الجروبات بنـجاح ✅**")
     else:
-        await event.edit("**⌯︙ تـخزين رسـائل الكروبات بالفـعل معـطلة ✅**")
+        await event.edit("**⌯︙ تـخزين رسـائل الجروبات بالفـعل معـطلة ✅**")

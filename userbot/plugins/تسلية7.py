@@ -1,6 +1,3 @@
-# =============================
-# |         JMTHON - QHR_1 - RR7PP           |
-# =============================
 
 import os
 
@@ -19,7 +16,7 @@ plugin_category = "fun"
     pattern="تراش$",
     command=("تراش", plugin_category),
     info={
-        "header": "Reply to image/sticker to get meme on that image.",
+        "header": "قم بالرد على الصورة / الملصق للحصول على ميم على تلك الصورة.",
         "usage": "{tr}تراش",
     },
 )
@@ -59,7 +56,7 @@ async def catbot(event):
     pattern="تهديد$",
     command=("تهديد", plugin_category),
     info={
-        "header": "Reply to image/sticker to get meme on that image.",
+        "header": "قم بالرد على الصورة / الملصق للحصول على ميم على تلك الصورة.",
         "usage": "{tr}تهديد",
     },
 )
@@ -98,8 +95,8 @@ async def catbot(event):
     pattern="فخ(?:\s|$)([\s\S]*)",
     command=("فخ", plugin_category),
     info={
-        "header": "Reply to image/sticker to get meme on that image.",
-        "Description": "creates a trap card",
+        "header": "قم بالرد على الصورة / الملصق للحصول على ميم على تلك الصورة.",
+        "Description": "البوت يصنع فخ",
         "usage": "{tr}trap (name of the person to trap) ; (trapper name)",
     },
 )
@@ -147,8 +144,8 @@ async def catbot(event):
     pattern="بورن(?:\s|$)([\s\S]*)",
     command=("بورن", plugin_category),
     info={
-        "header": "Reply to image/sticker to get meme on that image.",
-        "description": "pornhub comment creator",
+        "header": "قم بالرد على الصورة / الملصق للحصول على ميم على تلك الصورة.",
+        "description": "بورن هاب يصنع كومنت",
         "usage": "{tr}phub (username);(text in comment)",
     },
 )

@@ -61,8 +61,8 @@ async def _(event):
     pattern="اطفاء$",
     command=("اطفاء", plugin_category),
     info={
-        "header": "Shutdowns the bot !!",
-        "description": "To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use @hk_heroku_bot",
+        "header": "ايقاف السورس !!",
+        "description": "لإيقاف تشغيل الجلسه من heroku. لا يمكنك تشغيل بواسطة الروبوت ، فأنت بحاجة للوصول إلى heroku وتشغيله أو استخدامه @hk_heroku_bot",
         "usage": "{tr}shutdown",
     },
 )

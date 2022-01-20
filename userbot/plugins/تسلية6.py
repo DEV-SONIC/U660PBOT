@@ -20,13 +20,13 @@ plugin_category = "fun"
     pattern="ترامب(?:\s|$)([\s\S]*)",
     command=("ترامب", plugin_category),
     info={
-        "header": "trump tweet sticker with given custom text",
+        "header": "ملصق تغريدة ترامب مع نص مخصص معين",
         "usage": "{tr}ترامب <text>",
-        "examples": "{tr}trump Catuserbot is One of the Popular userbot",
+        "examples": "{tr}trump Catuserbot هو أحد برامج المستخدم المشهورة",
     },
 )
 async def nekobot(cat):
-    "trump tweet sticker with given custom text_"
+    "ملصق تغريدة ترامب مع نص مخصص معين_"
     text = cat.pattern_match.group(1)
     text = re.sub("&", "", text)
     reply_to_id = await reply_id(cat)
@@ -48,16 +48,16 @@ async def nekobot(cat):
 
 
 @jmthon.ar_cmd(
-    pattern="مودي(?:\s|$)([\s\S]*)",
-    command=("مودي", plugin_category),
+    pattern="سونيك(?:\s|$)([\s\S]*)",
+    command=("سونيك", plugin_category),
     info={
-        "header": "modi tweet sticker with given custom text",
-        "usage": "{tr}مودي <نص>",
-        "examples": "{tr}مودي جمثون الاصلي",
+        "header": "ملصق تغريدة سونيك بنص مخصص معين",
+        "usage": "{tr}سونيك <نص>",
+        "examples": "{tr}سونيك مالك السورس",
     },
 )
 async def nekobot(cat):
-    "modi tweet sticker with given custom text"
+    "ملصق تغريدة سونيك بنص مخصص معين"
     text = cat.pattern_match.group(1)
     text = re.sub("&", "", text)
     reply_to_id = await reply_id(cat)
@@ -82,9 +82,9 @@ async def nekobot(cat):
     pattern="بنر(?:\s|$)([\s\S]*)",
     command=("بنر", plugin_category),
     info={
-        "header": "Change my mind banner with given custom text",
+        "header": "تغيير رأيي لافتة مع نص مخصص معين",
         "usage": "{tr}غير عقلي <text>",
-        "examples": "{tr}غير عقلي Catuserbot is One of the Popular userbot",
+        "examples": "{tr}غير عقلي هو أحد برامج المستخدم المشهورة",
     },
 )
 async def nekobot(cat):
@@ -112,13 +112,13 @@ async def nekobot(cat):
     pattern="كانا(?:\s|$)([\s\S]*)",
     command=("كانا", plugin_category),
     info={
-        "header": "kanna chan sticker with given custom text",
+        "header": "ملصق كانا تشان مع نص مخصص معين",
         "usage": "{tr}كانا text",
-        "examples": "{tr}kanna Catuserbot is One of the Popular userbot",
+        "examples": "{tr}kanna Catuserbot أحد برامج المستخدم المشهورة",
     },
 )
 async def nekobot(cat):
-    "kanna chan sticker with given custom text"
+    "kanna chan ملصق مع نص مخصص معين"
     text = cat.pattern_match.group(1)
     text = re.sub("&", "", text)
     reply_to_id = await reply_id(cat)
@@ -143,9 +143,9 @@ async def nekobot(cat):
     pattern="تويت(?:\s|$)([\s\S]*)",
     command=("تويت", plugin_category),
     info={
-        "header": "The desired person tweet sticker with given custom text",
+        "header": "الشخص المطلوب غرد الملصق بنص مخصص معين",
         "usage": "{tr}تويت <username> ; <text>",
-        "examples": "{tr}tweet iamsrk ; Catuserbot is One of the Popular userbot",
+        "examples": "{tr}tweet iamsrk ; هو من اشهر البوتات الموجودة",
     },
 )
 async def nekobot(cat):

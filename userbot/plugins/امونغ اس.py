@@ -89,7 +89,7 @@ async def _(event):
     USERNAME = f"tg://user?id={event.client.uid}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    text1 = await edit_or_reply(event, "⌯︙هممم اكيـد اكو شـخص مات !!")
+    text1 = await edit_or_reply(event, "⌯︙هم في ناس ماتت !!")
     await asyncio.sleep(2)
     await text1.delete()
     stcr1 = await event.client.send_file(
