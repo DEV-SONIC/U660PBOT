@@ -65,7 +65,7 @@ async def bad(event):
             vname = oldvars[vname]
         if cmd == "اضف_":
             if not vinfo and vname == "ALIVE_TEMPLATE":
-                return await edit_delete(event, f"تابع @JJOTT")
+                return await edit_delete(event, f"تابع @u660p")
             if not vinfo and vname == "PING_TEXT":
                 return await edit_delete(
                     event,
