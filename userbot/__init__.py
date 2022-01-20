@@ -1,11 +1,4 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
-# All rights reserved.
-#
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
-# Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
-# ===============================================================
+
 import time
 
 import heroku3
@@ -16,23 +9,23 @@ from .core.session import jmthon
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "1.0.0"
-__license__ = "كـتابة وتـعديل فريـق جـمثون"
-__author__ = "جـمثون <https://T.ME/JMTHON>"
-__copyright__ = "JMTHON TEAM (C) 2020 - 2021  " + __author__
+__license__ = "كـتابة وتـعديل فريـق سونيك"
+__author__ = "سونيك <https://T.ME/U660P>"
+__copyright__ = "REVOR TEAM (C) 2020 - 2021  " + __author__
 
 jmthon.version = __version__
 jmthon.tgbot.version = __version__
-LOGS = logging.getLogger("جـمثون")
+LOGS = logging.getLogger("سونيك")
 bot = jmthon
 
 StartTime = time.time()
 JMVERSION = "5.2.0"
 
 
-if Config.UPSTREAM_REPO == "Jmthon-iq":
-    UPSTREAM_REPO_URL = "https://github.com/JMTHON-AR/JM-THON"
-elif Config.UPSTREAM_REPO == "jmthon-ar":
-    UPSTREAM_REPO_URL = "https://github.com/JMTHON-AR/JM-THON"
+if Config.UPSTREAM_REPO == "SONIC-EG":
+    UPSTREAM_REPO_URL = "https://github.com/DEV-SONIC/U660PBOT"
+elif Config.UPSTREAM_REPO == "SONIC-ar":
+    UPSTREAM_REPO_URL = "https://github.com/DEV-SONIC/U660PBOT"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 

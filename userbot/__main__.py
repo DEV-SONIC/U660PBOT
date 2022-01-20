@@ -1,10 +1,4 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
-# All rights reserved.
-#
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
-# Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+
 # ===============================================================
 import sys
 import os
@@ -34,7 +28,7 @@ print("جميع الحقوق والملفات محفوظة " + userbot.__license
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info(f"⚒️ يتم تشغيل جمثون")
+    LOGS.info(f"⚒️ يتم تشغيل سورس سونيك")
     jmthon.loop.run_until_complete(setup_bot())
     LOGS.info(f"✅ انتهاء التشغيل ")
 except Exception as e:
@@ -58,7 +52,7 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("----------------------------------")
-    print("تم بنجاح اكتمال تنصيب سورس جمثون المجاني ✓")
+    print("تم بنجاح اكتمال تنصيب سورس سونيك المجاني ✓")
     print(
         " - ارسل  .فحص  للتأكد من البوت\n-  ولعرض اوامر السورس ارسل  .الاوامر\n-  للمزيد من المعلومات ادخل الى مجموعتك في التليجرام"
     )
