@@ -23,8 +23,6 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-
-# Translate by  @RR7PP  -  @UUNZZ
 from ..helpers.utils import _format
 from . import edit_delete, edit_or_reply, jmthon, progress, reply_id, ytsearch
 

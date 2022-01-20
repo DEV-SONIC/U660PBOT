@@ -21,7 +21,7 @@ BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>
         "usage": [
             "{tr}ibutton <text> [Name on button]<buttonurl:link you want to open>",
         ],
-        "examples": "{tr}لستة قنواتي الرسمية [sonic]<buttonurl:t.me/u660p> [sonic]<buttonurl:t.me/revorb0t> ",
+        "examples": "{tr}لستة قنواتي الرسمية [𝐒𝐎𝐍𝐈𝐂]<buttonurl:t.me/u660p> [REVOR]<buttonurl:t.me/revorb0t> ",
     },
 )
 async def _(event):

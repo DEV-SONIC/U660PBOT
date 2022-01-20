@@ -184,7 +184,7 @@ async def _(dyno):
         app = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
         return await dyno.reply(
-            "⌯︙ عذرا لا يمكنك استخدام اوامر الفارات وهيروكو الا بعد اضافة كود هيروكو الى الفارات شرح الاضافة [اضغط هنا](https://t.me/u660p/151)"
+            "⌯︙ عذرا لا يمكنك استخدام اوامر الفارات وهيروكو الا بعد اضافة كود هيروكو الى الفارات شرح الاضافة [اضغط هنا](https://t.me/u660p)"
         )
     data = app.get_log()
     await edit_or_reply(

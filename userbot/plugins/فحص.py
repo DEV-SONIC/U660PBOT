@@ -8,7 +8,6 @@ from telethon.errors.rpcerrorlist import (
     WebpageCurlFailedError,
     WebpageMediaEmptyError,
 )
-
 from userbot import JMVERSION, StartTime, jmthon
 from ..core.managers import edit_or_reply
 from ..helpers.functions import check_data_base_heal_th, get_readable_time
@@ -16,12 +15,7 @@ from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
 from ..Config import Config
 from . import *
-
 ALIVE_CMD = Config.ALIVE_CMD or "فحص"
-
-# كتـابة وتعـديل:  @RR9R7
-
-
 @jmthon.on(admin_cmd(pattern=f"{ALIVE_CMD}(?: |$)(.*)"))
 async def amireallyalive(event):
     reply_to_id = await reply_id(event)
@@ -32,7 +26,7 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  - "
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت جـمثـون يعـمل بنـجـاح **"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت سونيك يعـمل بنـجـاح **"
     RR7_IMG = gvarstatus("ALIVE_PIC")
     jmthon_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = jmthon_caption.format(

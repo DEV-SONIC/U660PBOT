@@ -127,23 +127,23 @@ async def listall(jmthon):
 # code by @jmthon
 
 
-@jmthon.on(admin_cmd(pattern="نزوج(?:\s|$)([\s\S]*)"))
+@jmthon.on(admin_cmd(pattern="زواج(?:\s|$)([\s\S]*)"))
 async def rzfun(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 2034443585:
-        return await edit_or_reply(mention, f"**لا عيني محمد يحب بنية 😂🤍**")
-    await edit_or_reply(mention, f"**نزوج وماتباوع على غيري 🥺💞 ܰ**")
+    if user.id == 1890819157:
+        return await edit_or_reply(mention, f"**لا عيني سونيك يحب واحدة 😂🤍**")
+    await edit_or_reply(mention, f"**اتجوزنا يلا نعمل واحد 🥺💞 ܰ**")
 
 
-@jmthon.on(admin_cmd(pattern="طلاك(?:\s|$)([\s\S]*)"))
+@jmthon.on(admin_cmd(pattern="طلاق(?:\s|$)([\s\S]*)"))
 async def mention(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 2034443585:
-        return await edit_or_reply(mention, f"**لا عيني محمد يحب بنية 😂🤍**")
+    if user.id == 1890819157:
+        return await edit_or_reply(mention, f"**لا عيني سونيك يحب واحدة 😂🤍**")
     await edit_or_reply(mention, f"**طالق طالق بالعشرة 😹😭💕 ܰ**")
 
 

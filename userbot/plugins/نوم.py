@@ -125,26 +125,26 @@ async def on_afk(event):  # sourcery no-metrics
         if AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"- **عـمري انـي هسـة نـايم** \n- **مـدة الـنوم :** {endtime}"
+                    f"- **عـمري انا نـايم** \n- **مـدة الـنوم :** {endtime}"
                 )
             else:
                 message_to_reply = (
-                    f"- **عـمري انـي هسـة نـايم** \n- **مـدة الـنوم :** {endtime}"
+                    f"- **عـمري انـا نـايم** \n- **مـدة الـنوم :** {endtime}"
                 )
             if event.chat_id:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"- **عـمري انـي هسـة نـايم** \n- **مـدة الـنوم :** {endtime}"
+                    f"- **عـمري انـا نـايم** \n- **مـدة الـنوم :** {endtime}"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"- **عـمري انـي هسـة نـايم** \n- **مـدة الـنوم :** {endtime}"
+                    f"- **عـمري انـا نـايم** \n- **مـدة الـنوم :** {endtime}"
                 )
             else:
                 message_to_reply = (
-                    f"- **عـمري انـي هسـة نـايم** \n- **مـدة الـنوم :** {endtime}"
+                    f"- **عـمري انـا نـايم** \n- **مـدة الـنوم :** {endtime}"
                 )
             if event.chat_id:
                 msg = await event.reply(message_to_reply)
@@ -247,5 +247,3 @@ async def _(event):
             )
 
 
-# JMTHON - RR9R7 - GGGNE
-# L E O - M U H A M M E D

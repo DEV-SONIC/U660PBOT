@@ -4,10 +4,6 @@ from telethon.utils import get_display_name
 from userbot import jmthon
 from ..core.managers import edit_or_reply
 from ..sql_helper import blacklist_sql as sql
-#
-# for ~ @Jmthon ~ @RR7PP
-
-
 @jmthon.ar_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text

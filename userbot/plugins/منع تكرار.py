@@ -46,7 +46,7 @@ async def _(event):
     else:
         await event.client.send_message(
             entity=event.chat_id,
-            message=f"**⌔∮ عملية التقيد التلقائي للتكرار ⚠️**\n\n**▾ قام ↫**[المستخدم ](tg://user?id={event.message.sender_id})\n**▾∮تم تقييده تلقائيًا بسبب عبوره حد السماح بالتكرار في هذه المجموعة**",
+            message=f"**⌔∮ عملية التقيد التلقائي للتكرار ⚠️**\n\n**▾ قام ↫**[المستخدم ](tg://user?id={event.message.sender_id})\n**▾∮تم تقييده تلقائيًا بسبب تخطيه حد السماح بالتكرار في هذه المجموعة**",
             reply_to=event.message.id,
         )
 

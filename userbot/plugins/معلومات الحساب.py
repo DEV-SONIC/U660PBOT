@@ -101,8 +101,8 @@ async def stats(event):  # sourcery no-metrics
 
 
 @jmthon.ar_cmd(
-    pattern="كروباته(?:\s|$)([\s\S]*)",
-    command=("كروباته", plugin_category),
+    pattern="جروباته(?:\s|$)([\s\S]*)",
+    command=("جروباته", plugin_category),
     info={
         "header": "To get list of public groups of repled person or mentioned person.",
         "usage": "{tr}ustat <reply/userid/username>",

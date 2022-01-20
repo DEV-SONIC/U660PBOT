@@ -110,7 +110,7 @@ async def typewriter(typew):
     info={
         "header": "تكرار النص المحدد مع عدد معين من المرات",
         "usage": "{tr}عيد <العدد> <النص>",
-        "examples": "{tr}عيد 10 جمثون",
+        "examples": "{tr}عيد 10 سونيك",
     },
 )
 async def _(event):

@@ -26,9 +26,6 @@ from ..sql_helper.globals import gvarstatus
 
 plugin_category = "fun"
 
-# modified and developed by @jmthon
-
-
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
 EMOJI_SEN = [
