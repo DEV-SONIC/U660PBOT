@@ -174,8 +174,8 @@ def errors_handler(func):
             result = output[0] + output[1]
             ftext += result
             pastelink = await paste_message(ftext)
-            text = "**تقرير خطا جمثون**\n\n"
-            link = "[هنا](https://t.me/GroupJmthon)"
+            text = "**تقرير خطا سونيك**\n\n"
+            link = "[هنا](https://t.me/U660P)"
             text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
             text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
             text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
