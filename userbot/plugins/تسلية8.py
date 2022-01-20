@@ -1,3 +1,5 @@
+# WRITED BY - @VUUZZ - @RR7PP
+
 import io
 import os
 import random
@@ -23,7 +25,8 @@ async def get_font_file(client, channel_id, search_kw=""):
         search=search_kw,
     )
     font_file_message = random.choice(font_file_message_s)
-return await client.download_media(font_file_message)
+    return await client.download_media(font_file_message)
+
 
 @jmthon.ar_cmd(
     pattern="نص(?:\s|$)([\s\S]*)",
@@ -49,6 +52,8 @@ async def waifu(animu):
     await animu.delete()
     await waifutxt(text, animu.chat_id, reply_to_id, animu.client)
 
+
+# 12 21 28 30
 @jmthon.ar_cmd(
     pattern="ستيكر ?(?:(.*?) ?; )?([\s\S]*)",
     command=("ستيكر", plugin_category),
@@ -60,7 +65,7 @@ async def waifu(animu):
         ],
         "examples": "{tr}stcr hello",
     },
-)  
+)  # WRITED BY - @VUUZZ - @RR7PP
 async def sticklet(event):
     "⌔︙النص الخاص بك كملصق"
     R = random.randint(0, 256)
@@ -76,7 +81,7 @@ async def sticklet(event):
         if event.reply_to_msg_id:
             sticktext = reply_message.message
         else:
-            return await edit_or_reply(event, " ⌔︙عايز حاجة؟")
+            return await edit_or_reply(event, " ⌔︙تحتاج شيئًا ، همممم")
     await event.delete()
     sticktext = deEmojify(sticktext)
     sticktext = textwrap.wrap(sticktext, width=10)
@@ -97,6 +102,7 @@ async def sticklet(event):
     image_stream.name = "jmthon.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
+    # finally, reply the sticker
     await event.client.send_file(
         event.chat_id,
         image_stream,
@@ -107,13 +113,16 @@ async def sticklet(event):
         os.remove(FONT_FILE)
     except BaseException:
         pass
+
+
+# WRITED BY - @VUUZZ - @RR7PP
 @jmthon.ar_cmd(
     pattern="هونك(?:\s|$)([\s\S]*)",
     command=("هونك", plugin_category),
     info={
-        "header": "اجعل هونك يقول أي شيء.",
+        "header": "Make honk say anything.",
         "usage": "{tr}honk <text/reply to msg>",
-        "examples": "{tr}هونك كيف حالك?",
+        "examples": "{tr}honk How you doing?",
     },
 )
 async def honk(event):
@@ -130,11 +139,12 @@ async def honk(event):
     await event.delete()
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
 
+
 @jmthon.ar_cmd(
     pattern="تغريد(?:\s|$)([\s\S]*)",
     command=("تغريد", plugin_category),
     info={
-        "header": "قم بعمل تغريدة جامدة للتويتر",
+        "header": "Make a cool tweet of your account",
         "usage": "{tr}twt <text/reply to msg>",
         "examples": "{tr}twt Catuserbot",
     },
@@ -148,7 +158,7 @@ async def twt(event):
         if event.is_reply:
             text = (await event.get_reply_message()).message
         else:
-            return await edit_delete(event, "**⌯︙ماذا يفترض بي ان اغرد اكتب نصا**")
+            return await edit_delete(event, "**⌯︙ماذا يفترض بي ان اغرد اكتي نصا**")
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
@@ -158,11 +168,11 @@ async def twt(event):
     pattern="دوغي(?:\s|$)([\s\S]*)",
     command=("دوغي", plugin_category),
     info={
-        "header": "اجعل دوجي يقول أي شيء.",
+        "header": "Make doge say anything.",
         "usage": "{tr}doge <text/reply to msg>",
-        "examples": "{tr}دوج أعط المال",
+        "examples": "{tr}doge Gib money",
     },
-)  
+)  # WRITED BY - @VUUZZ - @RR7PP
 async def doge(event):
     "⌔︙اصنع ستيكر كلب رائع."
     text = event.pattern_match.group(1)
@@ -177,24 +187,28 @@ async def doge(event):
     await event.delete()
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
 
+
+# WRITED BY - @VUUZZ - @RR7PP
+
+
 @jmthon.ar_cmd(
     pattern="غلاكس(|ر)(?:\s|$)([\s\S]*)",
     command=("غلاكس", plugin_category),
     info={
-        "header": "اجعل التنين يقول النص الخاص بك.",
+        "header": "Make glax the dragon scream your text.",
         "flags": {
-            "r": "اعكس وجه التنين",
+            "r": "Reverse the face of the dragon",
         },
         "usage": [
             "{tr}glax <text/reply to msg>",
             "{tr}glaxr <text/reply to msg>",
         ],
         "examples": [
-            "{tr}جلاكس يموت لك",
-            "{tr}جلاكس يموت لك",
+            "{tr}glax Die you",
+            "{tr}glaxr Die you",
         ],
     },
-)  
+)  # WRITED BY - @VUUZZ - @RR7PP
 async def glax(event):
     "⌔︙اجعل غلاكس التنين ينفخ نصك."
     cmd = event.pattern_match.group(1).lower()
@@ -208,9 +222,10 @@ async def glax(event):
         else:
             return await edit_delete(
                 event, " ⌯︙ماذا يفترض بـ گلاكـس ان يقول اعطه نصا**"
-            )  
+            )  # WRITED BY - @VUUZZ - @RR7PP
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(
         event.client, bot_name, text, event.chat_id, reply_to_id, c_lick=c_lick
     )
+    # WRITED BY - @VUUZZ - @RR7PP
