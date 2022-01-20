@@ -71,9 +71,6 @@ def user_full_name(user):
     return full_name
 
 
-# كتابة فريق سونيك المتغيرات تثبت ودي
-# تخمط اذكر حقوق غيرها انت فرخ و دي 😂
-
 
 @jmthon.on(admin_cmd(pattern=f"{ADD_CMD} ?(.*)"))
 async def get_users(event):

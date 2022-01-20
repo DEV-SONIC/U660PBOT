@@ -1,13 +1,3 @@
-#  قبل لا تفكر تخمط هذا الملف ترا الملف متعوب عليه لا تخمط واني حذرتك
-# حسب قوانين موقع github https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
-# تنص على انه اي شخص ياخذ الملف بدون ذكر حقوق طبع والنسر سيتم حذف حسابه من قبل صاحب الملف اقتضى التنوي
-# Copyright ©️ 2021 RR9R7 . All Rights Reserved
-# You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits -  (  @RR7PP  - @JMTHON  )
-#
-
-# 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @Jmthon  ~ @RR7PPimport re
-# 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @Jmthon  ~ @RR7PP
 
 import re
 
@@ -171,10 +161,7 @@ async def _(e):
     tultd = [Button.inline(f"{x}", data=f"calc{x}") for x in m]
     lst = list(zip(tultd[::4], tultd[1::4], tultd[2::4], tultd[3::4]))
     lst.append([Button.inline("=", data="calc=")])
-    await e.edit("**الحـاسبة العـلمية لسـورس سونيك\n @JMTHON**", buttons=lst)
-
-
-# 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @Jmthon  ~ @RR7PP
+    await e.edit("**الحـاسبة العـلمية لسـورس سونيك\n @u660p**", buttons=lst)
 
 CMD_HELP.update(
     {"الحسابة": ".حاسبة" "\n فقط اكتب الامر لعرض حاسبة علميه تحتاج الى تفعيل وضع الانلاين اولا\n\n"}

@@ -447,7 +447,7 @@ async def _ban_person(event):
                 f"الحـظر\
                 \nالمسـتخدم: [{user.first_name}](tg://user?id={user.id})\
                 \nالـدردشـة: {event.chat.title}\
-                \n ايـدي الكـروب: (`{event.chat_id}`)",
+                \n ايـدي الجروب: (`{event.chat_id}`)",
             )
 
 

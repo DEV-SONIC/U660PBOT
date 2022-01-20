@@ -338,7 +338,7 @@ async def _(event):  # sourcery no-metrics
     if not current_db_locks:
         res = "لا توجد معلومات كافيه في هذه الدردشه"
     else:
-        res = "⌯︙ملـف الاوامر مقدم من سورس جمثـون: \n"
+        res = "⌯︙ملـف الاوامر مقدم من سورس سونيك: \n"
         ubots = "✗" if current_db_locks.bots else "✔"
         ucommands = "✗" if current_db_locks.commands else "✔"
         "✗" if current_db_locks.email else "✔"

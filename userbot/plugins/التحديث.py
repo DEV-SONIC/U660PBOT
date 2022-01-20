@@ -64,7 +64,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**قام مطورين السورس بتحديث سونيك**\n**التـغييرات\n** {changelog}"
+        f"**قام مطورين السورس بتحديث سورس سونيك**\n**التـغييرات\n** {changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -187,7 +187,7 @@ async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()
     event = await edit_or_reply(
-        event, "**⌔∮ يـتـم البـحـث عـن تـحديثـات سـورس جـمـثـون انـتـظـر**"
+        event, "**⌔∮ يـتـم البـحـث عـن تـحديثـات سـورس سونيك انـتـظـر**"
     )
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -241,7 +241,7 @@ async def upstream(event):
     if changelog == "" and not force_update:
         await event.edit(
             "**⌔∮ سورس سونيك محدث الى اخر اصدار **\n"
-            f"**قـنـاة سـورس جـمـثـون** : @U660P"
+            f"**قـنـاة سـورس سونيك** : @U660P"
         )
         return repo.__del__()
     if conf == "" and not force_update:
@@ -254,7 +254,7 @@ async def upstream(event):
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit("**• جار تحـديـث سـورس جـمثـون انـتـظـر قـليـلا 🔨**")
+        await event.edit("**• جار تحـديـث سـورس سونيك انـتـظـر قـليـلا 🔨**")
         await update(event, repo, ups_rem, ac_br)
     return
 

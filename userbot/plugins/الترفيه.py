@@ -15,7 +15,7 @@ from ..core.managers import edit_or_reply
 from ..helpers import get_user_from_event
 
 
-@jmthon.on(admin_cmd(pattern="رفع بكلبي(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع بقلبي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -24,11 +24,11 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
-        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه بڪلبك 🖤 "
+        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه بقلبك 🖤 "
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع زوجي(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع جوزي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -38,55 +38,50 @@ async def permalink(mention):
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
         mention,
-        f"- المستخدم [{tag}](tg://user?id={user.id}) \nتـم رفعه زوجج روحوا خلفوا 🤤😂",
+        f"- المستخدم [{tag}](tg://user?id={user.id}) \nتـم رفعه جوزك  روحوا اعملو واحد 🤤😂",
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع مطي(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع حمار(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
     if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك هذا المطور **")
+        return await edit_or_reply(mention, f"**- احا دا هذا المطور **")
    
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
-        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفـعه مطي هـنا "
+        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفـعه حمار هـنا "
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع مرتي(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع مراتي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
     if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
+        return await edit_or_reply(mention, f"**- احا دا هذا المطور**")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
         mention,
-        f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه مـࢪتك مـشي نخـلف 😹🤤",
+        f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه مراتك روح نيكها 😹🤤",
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع جلب(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع كلب(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
     if user.id == 1890819157:
         return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
+
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
         mention,
-        f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه جلب خليه خله ينبح 😂🐶",
+        f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه كلب خليه خله  ياخد عضمة 😂🐶",
     )
 
 
@@ -103,10 +98,6 @@ async def permalink(mention):
         return
     if user.id == 1890819157:
         return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
     muh = user.first_name.replace("\u2060", "") if user.first_name else user.username
     sos = random.choice(hena)
     await edit_or_reply(mention, f"{sos} .")
@@ -131,11 +122,8 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
+        return await edit_or_reply(mention, f"**- احا  دا المطور سيد الرجالة وعلى راسك**")
+    
     muh = user.first_name.replace("\u2060", "") if user.first_name else user.username
     sos = random.choice(rr7)
     await edit_or_reply(
@@ -155,7 +143,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع تاج(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع ملك(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -164,7 +152,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
-        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه تاج 👑🔥"
+        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n تـم رفعـه ملك 👑🔥"
     )
 
 
@@ -174,12 +162,6 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    if user.id == 1890819157:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
     if user.id == 1890819157:
         return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username

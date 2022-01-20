@@ -34,7 +34,7 @@ async def permalink(mention):
         mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه حيوان 🐏"
     )
 
-@jmthon.on(admin_cmd(pattern="رفع بزون(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع خول(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -43,10 +43,10 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
-        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه بزون 🐈"
+        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه خول "
     )
 
-@jmthon.on(admin_cmd(pattern="رفع زاحف(?: |$)(.*)"))
+@jmthon.on(admin_cmd(pattern="رفع عرص(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -55,6 +55,6 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(
-        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه زاحف 🐍💞"
+        mention, f"- المستخدم [{tag}](tg://user?id={user.id}) \n- تـم رفعـه عرص "
     )
 

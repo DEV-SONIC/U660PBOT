@@ -71,9 +71,9 @@ async def echo(event):
         except Exception as e:
             await edit_delete(catevent, f"⌔∮ خطأ:\n`{str(e)}`")
         else:
-            await edit_or_reply(event, "Echo has been stopped for the user")
+            await edit_or_reply(event, "تم ايقاف وضع الازعاج")
     else:
-        await edit_or_reply(event, "The user is not activated with echo")
+        await edit_or_reply(event, "العضو لم يتم تفعيل وضع لازعاج عليه")
 
 
 @jmthon.on(admin_cmd(pattern="الغاء التقليد( -a)?"))

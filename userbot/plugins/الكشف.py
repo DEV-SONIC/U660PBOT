@@ -65,8 +65,6 @@ async def fetch_info(replied_user, event):
         ".「 مـالك الحساب  」."
         if user_id == (await event.client.get_me()).id
         and user_id != 1890819157
-        and user_id != 1890819157
-        and user_id != 1890819157
         else rozrtba
     )
     caption = " \n"
