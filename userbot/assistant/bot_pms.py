@@ -1,10 +1,10 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @U660P - < https://t.me/U660P >
+# Copyright (C) 2021 - U660P-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
+# This file is a part of < https://github.com/DEV-SONIC/u660p >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/DEV-SONIC/u660p/blob/master/LICENSE
 # ===============================================================
 import re
 from collections import defaultdict
@@ -56,10 +56,10 @@ async def check_bot_started_users(user, event):
     check = get_starter_details(user.id)
     if check is None:
         start_date = str(datetime.now().strftime("%B %d, %Y"))
-        notification = f"**▾∮ مرحبا عزيزي ↸**\n**▾ قام المستخدم ↫ ** 『{_format.mentionuser(user.first_name , user.id)}』 **بتشغيل البوت❕**\n**▾∮ الاسم ⪼** `{get_display_name(user)}`\n**▾∮الايدي ⪼ **`{user.id}`\n\n**⍣ⵧⵧⵧⵧⵧᴊᴍᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙅𝙈𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/JMTHON)"
+        notification = f"**▾∮ مرحبا عزيزي ↸**\n**▾ قام المستخدم ↫ ** 『{_format.mentionuser(user.first_name , user.id)}』 **بتشغيل البوت❕**\n**▾∮ الاسم ⪼** `{get_display_name(user)}`\n**▾∮الايدي ⪼ **`{user.id}`\n\n**⍣ⵧⵧⵧⵧⵧسونيكⵧⵧⵧⵧⵧ⍣**\n[سورس سونيك 🧸♥](https://t.me/U660P)"
     else:
         start_date = check.date
-        notification = f"**▾∮ قام المستخدم ↫ 「{_format.mentionuser(user.first_name , user.id)}」 بإعادة تشغيل البوت❗️**\n**▾∮الاسم ⪼ **`{get_display_name(user)}`\n**▾∮الايدي ⪼ ** `{user.id}`\n\n**⍣ⵧⵧⵧⵧⵧᴊᴍᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙅𝙈𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/JMTHON)"
+        notification = f"**▾∮ قام المستخدم ↫ 「{_format.mentionuser(user.first_name , user.id)}」 بإعادة تشغيل البوت❗️**\n**▾∮الاسم ⪼ **`{get_display_name(user)}`\n**▾∮الايدي ⪼ ** `{user.id}`\n\n**⍣ⵧⵧⵧⵧⵧسونيكⵧⵧⵧⵧⵧ⍣**\n[سورس سونيك 🧸♥](https://t.me/U660P)"
 
     try:
         add_starter_to_db(user.id, get_display_name(user), start_date, user.username)
@@ -241,7 +241,7 @@ async def bot_start(event):
         break
     if user_id is None:
         return await info_msg.edit("حدث خطأ!\n**لم اعثر على المستخدم في بياناتي ✘**")
-    uinfo = f"**▾∮الاسم ⪼ **`{user_name}`\n**▾∮الايدي ⪼ **`{user_id}`\n**▾∮الرابط ⪼** 「{_format.mentionuser(user_name , user_id)}」\n\n**⍣ⵧⵧⵧⵧⵧᴊᴍᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙅𝙈𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/JMTHON)"
+    uinfo = f"**▾∮الاسم ⪼ **`{user_name}`\n**▾∮الايدي ⪼ **`{user_id}`\n**▾∮الرابط ⪼** 「{_format.mentionuser(user_name , user_id)}」\n\n**⍣ⵧⵧⵧⵧⵧسونيكⵧⵧⵧⵧⵧ⍣**\n[سورس سونيك 🧸♥](https://t.me/U660P)"
     await info_msg.edit(uinfo)
 
 
@@ -276,7 +276,7 @@ async def send_flood_alert(user_) -> None:
     flood_msg = (
         r"تحذير التكرار ⚠️"
         "\n\n"
-        f"**▾∮  المستخدم ⪼** 「{_format.mentionuser(get_display_name(user_), user_.id)}」\n**▾∮الايدي ⪼ **`{user_.id}`\n\n**▾ المستخدم قام بتكرار الرسائل! العدد ↫** `({flood_count})`\n`*عند الاهمال سيتم حظره تلقائي ❗️`\n**للاجراء السريع في الاسفل ↶** \n**⍣ⵧⵧⵧⵧⵧᴊᴍᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙅𝙈𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/JMTHON)"
+        f"**▾∮  المستخدم ⪼** 「{_format.mentionuser(get_display_name(user_), user_.id)}」\n**▾∮الايدي ⪼ **`{user_.id}`\n\n**▾ المستخدم قام بتكرار الرسائل! العدد ↫** `({flood_count})`\n`*عند الاهمال سيتم حظره تلقائي ❗️`\n**للاجراء السريع في الاسفل ↶** \n**⍣ⵧⵧⵧⵧⵧسونيكⵧⵧⵧⵧⵧ⍣**\n[سورس سونيك 🧸♥](https://t.me/U660P)"
     )
 
     if found:
@@ -339,7 +339,7 @@ async def bot_pm_ban_cb(c_q: CallbackQuery):
         await c_q.answer(f"جاري حظر المستخدم ↫ `{user_id}`", alert=False)
         await ban_user_from_bot(user, "لا يسمح بتكرار الرسائل!")
         await c_q.edit(
-            f"▾∮ تم حظر المستخدم بسبب التكرار❗️ ↶**\n**▾∮الاسم ⪼ **`{user_name}`\n**▾∮الايدي ⪼ **`{user_id}`\n**▾∮الرابط ⪼** 「{_format.mentionuser(user_name , user_id)}**⍣ⵧⵧⵧⵧⵧᴊᴍᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙅𝙈𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/JMTHON)"
+            f"▾∮ تم حظر المستخدم بسبب التكرار❗️ ↶**\n**▾∮الاسم ⪼ **`{user_name}`\n**▾∮الايدي ⪼ **`{user_id}`\n**▾∮الرابط ⪼** 「{_format.mentionuser(user_name , user_id)}**⍣ⵧⵧⵧⵧⵧسونيكⵧⵧⵧⵧⵧ⍣**\n[سورس سونيك 🧸♥](https://t.me/U660P)"
         )
 
 
