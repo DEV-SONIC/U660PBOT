@@ -5,7 +5,7 @@ import heroku3
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import jmthon
+from .core.session import Sonic
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "1.0.0"
@@ -13,10 +13,10 @@ __license__ = "كـتابة وتـعديل فريـق سونيك"
 __author__ = "سونيك <https://T.ME/U660P>"
 __copyright__ = "REVOR TEAM (C) 2020 - 2021  " + __author__
 
-jmthon.version = __version__
-jmthon.tgbot.version = __version__
+Sonic.version = __version__
+Sonic.tgbot.version = __version__
 LOGS = logging.getLogger("سونيك")
-bot = jmthon
+bot = Sonic
 
 StartTime = time.time()
 JMVERSION = "5.2.0"

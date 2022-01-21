@@ -8,7 +8,7 @@ from userbot import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import jmthon
+from .core.session import Sonic
 from .utils import (
     add_bot_to_logger_group,
     autojo,
@@ -29,7 +29,7 @@ cmdhr = Config.COMMAND_HAND_LER
 
 try:
     LOGS.info(f"⚒️ يتم تشغيل سورس سونيك")
-    jmthon.loop.run_until_complete(setup_bot())
+    Sonic.loop.run_until_complete(setup_bot())
     LOGS.info(f"✅ انتهاء التشغيل ")
 except Exception as e:
     LOGS.error(f"{str(e)}")
@@ -66,18 +66,18 @@ async def startup_process():
     return
 
 
-jmthon.loop.run_until_complete(startup_process())
-jmthon.loop.run_until_complete(autozs())
-jmthon.loop.run_until_complete(autojo())
+Sonic.loop.run_until_complete(startup_process())
+Sonic.loop.run_until_complete(autozs())
+Sonic.loop.run_until_complete(autojo())
 
 
 if len(sys.argv) not in (1, 3, 4):
-    jmthon.disconnect()
+    Sonic.disconnect()
 elif not Catcheck.sucess:
     if HEROKU_APP is not None:
         HEROKU_APP.restart()
 else:
     try:
-        jmthon.run_until_disconnected()
+        Sonic.run_until_disconnected()
     except ConnectionError:
         pass
