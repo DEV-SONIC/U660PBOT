@@ -11,7 +11,7 @@ from telethon.errors import QueryIdInvalidError
 from telethon.events import CallbackQuery, InlineQuery
 from youtubesearchpython import VideosSearch
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..helpers.functions import rand_key
@@ -208,7 +208,7 @@ def paginate_help(
     return pairs
 
 
-@jmthon.tgbot.on(InlineQuery)
+@Sonic.tgbot.on(InlineQuery)
 async def inline_handler(event):
     builder = event.builder
     result = None
@@ -421,7 +421,7 @@ async def inline_handler(event):
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="Jmthon Help™",
+                title="Sonic Help™",
                 description="**▾∮ قائمة التعليمات الخاصة بــ سونيك **",
                 text=_result[0],
                 buttons=_result[1],
@@ -587,7 +587,7 @@ async def inline_handler(event):
         await event.answer([result] if result else None)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"close")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(b"close")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     buttons = [
@@ -596,14 +596,14 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit("غلق القائمة 🔒", buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"check")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(b"check")))
 async def on_plugin_callback_query_handler(event):
     text = f"الملفات 🗃 : {len(PLG_INFO)}\nعدد الاوامر 👨‍💻 : {len(CMD_INFO)}\
         \n\nمساعدة <اسم الملف> : للحصول على معلومات الملف المساعد المحدد\nمساعدة <الامر> : للحصول ع معلومات الامر المحدد.\nاستفسار <الاومر> : للبحث عن أي أوامر."
     await event.answer(text, cache_time=0, alert=True)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"(.*)_menu")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(b"(.*)_menu")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     category = str(event.pattern_match.group(1).decode("UTF-8"))
@@ -614,7 +614,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text, buttons=buttons)
 
 
-@jmthon.tgbot.on(
+@Sonic.tgbot.on(
     CallbackQuery(
         data=re.compile(b"back_([a-z]+)_([a-z1-9]+)_([0-9]+)_?([a-z1-9]+)?_?([0-9]+)?")
     )
@@ -646,14 +646,14 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"mainmenu")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"mainmenu")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     _result = main_menu()
     await event.edit(_result[0], buttons=_result[1])
 
 
-@jmthon.tgbot.on(
+@Sonic.tgbot.on(
     CallbackQuery(data=re.compile(rb"(.*)_prev\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
 )
 @check_owner
@@ -684,7 +684,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(buttons=buttons)
 
 
-@jmthon.tgbot.on(
+@Sonic.tgbot.on(
     CallbackQuery(data=re.compile(rb"(.*)_next\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
 )
 @check_owner
@@ -712,7 +712,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(buttons=buttons)
 
 
-@jmthon.tgbot.on(
+@Sonic.tgbot.on(
     CallbackQuery(
         data=re.compile(b"(.*)_cmdhelp_([a-z1-9]+)_([0-9]+)_([a-z]+)_([0-9]+)")
     )

@@ -1,10 +1,10 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
+# This file is a part of < https://github.com/Sonic-AR/Sonic >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # ===============================================================
 import sys
 
@@ -21,10 +21,10 @@ loop = None
 if Config.STRING_SESSION:
     session = StringSession(str(Config.STRING_SESSION))
 else:
-    session = "jmthon"
+    session = "Sonic"
 
 try:
-    jmthon = CatUserBotClient(
+    Sonic = CatUserBotClient(
         session=session,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
@@ -39,7 +39,7 @@ except Exception as e:
     sys.exit()
 
 
-jmthon.tgbot = tgbot = CatUserBotClient(
+Sonic.tgbot = tgbot = CatUserBotClient(
     session="arTgbot",
     api_id=Config.APP_ID,
     api_hash=Config.API_HASH,

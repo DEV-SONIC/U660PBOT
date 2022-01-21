@@ -1,4 +1,4 @@
-# JMTHON userbot
+# Sonic userbot
 import datetime
 import inspect
 import re
@@ -151,7 +151,7 @@ class CatUserBotClient(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import jmthon
+            from .session import Sonic
 
             if not func.__doc__ is None:
                 CMD_INFO[command[0]].append((func.__doc__).strip())
@@ -164,18 +164,18 @@ class CatUserBotClient(TelegramClient):
                     except BaseException:
                         LOADED_CMDS.update({command[0]: [wrapper]})
                 if edited:
-                    jmthon.add_event_handler(
+                    Sonic.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                jmthon.add_event_handler(
+                Sonic.add_event_handler(
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
-                            jmthon.add_event_handler(
+                            Sonic.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
@@ -183,7 +183,7 @@ class CatUserBotClient(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        jmthon.add_event_handler(
+                        Sonic.add_event_handler(
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
@@ -199,8 +199,8 @@ class CatUserBotClient(TelegramClient):
                 except BaseException:
                     LOADED_CMDS.update({file_test: [func]})
                 if edited:
-                    jmthon.add_event_handler(func, events.MessageEdited(**kwargs))
-                jmthon.add_event_handler(func, events.NewMessage(**kwargs))
+                    Sonic.add_event_handler(func, events.MessageEdited(**kwargs))
+                Sonic.add_event_handler(func, events.NewMessage(**kwargs))
             return wrapper
 
         return decorator
@@ -266,12 +266,12 @@ class CatUserBotClient(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import jmthon
+            from .session import Sonic
 
             if edited is True:
-                jmthon.tgbot.add_event_handler(func, events.MessageEdited(**kwargs))
+                Sonic.tgbot.add_event_handler(func, events.MessageEdited(**kwargs))
             else:
-                jmthon.tgbot.add_event_handler(func, events.NewMessage(**kwargs))
+                Sonic.tgbot.add_event_handler(func, events.NewMessage(**kwargs))
 
             return wrapper
 
