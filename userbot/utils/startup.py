@@ -10,11 +10,11 @@ from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
 
 from userbot import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.session import jmthon
+from ..core.session import Sonic
 from ..helpers.utils import install_pip
 from ..sql_helper.global_collection import (
     del_keyword_collectionlist,
@@ -24,7 +24,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
-LOGS = logging.getLogger("JMTHON")
+LOGS = logging.getLogger("Sonic")
 cmdhr = Config.COMMAND_HAND_LER
 
 
@@ -33,25 +33,25 @@ async def setup_bot():
     To set up bot for userbot
     """
     try:
-        await jmthon.connect()
-        config = await jmthon(functions.help.GetConfigRequest())
+        await Sonic.connect()
+        config = await Sonic(functions.help.GetConfigRequest())
         for option in config.dc_options:
-            if option.ip_address == jmthon.session.server_address:
-                if jmthon.session.dc_id != option.id:
+            if option.ip_address == Sonic.session.server_address:
+                if Sonic.session.dc_id != option.id:
                     LOGS.warning(
-                        f"⌯︙معرف ثابت في الجلسة من {jmthon.session.dc_id}"
+                        f"⌯︙معرف ثابت في الجلسة من {Sonic.session.dc_id}"
                         f"⌯︙لـ  {option.id}"
                     )
-                jmthon.session.set_dc(option.id, option.ip_address, option.port)
-                jmthon.session.save()
+                Sonic.session.set_dc(option.id, option.ip_address, option.port)
+                Sonic.session.save()
                 break
-        bot_details = await jmthon.tgbot.get_me()
+        bot_details = await Sonic.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
-        # await jmthon.start(bot_token=Config.TG_BOT_USERNAME)
-        jmthon.me = await jmthon.get_me()
-        jmthon.uid = jmthon.tgbot.uid = utils.get_peer_id(jmthon.me)
+        # await Sonic.start(bot_token=Config.TG_BOT_USERNAME)
+        Sonic.me = await Sonic.get_me()
+        Sonic.uid = Sonic.tgbot.uid = utils.get_peer_id(Sonic.me)
         if Config.OWNER_ID == 0:
-            Config.OWNER_ID = utils.get_peer_id(jmthon.me)
+            Config.OWNER_ID = utils.get_peer_id(Sonic.me)
     except Exception as e:
         LOGS.error(f"كـود تيرمكس - {str(e)}")
         sys.exit()
@@ -63,7 +63,7 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.CATUBLOGO = await jmthon.tgbot.send_file(
+            Config.CATUBLOGO = await Sonic.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/e9cd63140ffaba419db6b.jpg",
                 caption="⌯︙**بــوت سونيك يـعـمـل بـنـجـاح**  ✅ \n⌯︙**قـنـاة الـسـورس**  : @u660p ",
@@ -81,15 +81,15 @@ async def startupmessage():
         return None
     try:
         if msg_details:
-            await jmthon.check_testcases()
-            message = await jmthon.get_messages(msg_details[0], ids=msg_details[1])
+            await Sonic.check_testcases()
+            message = await Sonic.get_messages(msg_details[0], ids=msg_details[1])
             text = (
                 message.text
                 + "\n\n**⌯︙اهلا وسهلا لقد قمت باعاده تشغيل بـوت سونيك تمت بنجاح**"
             )
-            await jmthon.edit_message(msg_details[0], msg_details[1], text)
+            await Sonic.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
-                await jmthon.send_message(
+                await Sonic.send_message(
                     msg_details[0],
                     f"{cmdhr}بنك",
                     reply_to=msg_details[1],
@@ -114,7 +114,7 @@ async def ipchange():
         delgvar("ipaddress")
         LOGS.info("Ip Change detected")
         try:
-            await jmthon.disconnect()
+            await Sonic.disconnect()
         except (ConnectionError, CancelledError):
             pass
         return "ip change"
@@ -124,9 +124,9 @@ async def add_bot_to_logger_group(chat_id):
     """
     To add bot to logger groups
     """
-    bot_details = await jmthon.tgbot.get_me()
+    bot_details = await Sonic.tgbot.get_me()
     try:
-        await jmthon(
+        await Sonic(
             functions.messages.AddChatUserRequest(
                 chat_id=chat_id,
                 user_id=bot_details.username,
@@ -135,7 +135,7 @@ async def add_bot_to_logger_group(chat_id):
         )
     except BaseException:
         try:
-            await jmthon(
+            await Sonic(
                 functions.channels.InviteToChannelRequest(
                     channel=chat_id,
                     users=[bot_details.username],
@@ -183,16 +183,16 @@ async def load_plugins(folder):
 
 async def autojo():
     try:
-        await jmthon(JoinChannelRequest("@u660p"))
+        await Sonic(JoinChannelRequest("@u660p"))
         if gvar("AUTOEO") is False:
             return
         else:
             try:
-                await jmthon(JoinChannelRequest("@u660p"))
+                await Sonic(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
             try:
-                await jmthon(JoinChannelRequest("@RR7PP"))
+                await Sonic(JoinChannelRequest("@RR7PP"))
             except BaseException:
                 pass
     except BaseException:
@@ -201,16 +201,16 @@ async def autojo():
 
 async def autozs():
     try:
-        await jmthon(JoinChannelRequest("@GROUPJMTHON"))
+        await Sonic(JoinChannelRequest("@GROUPSonic"))
         if gvar("AUTOZS") is False:
             return
         else:
             try:
-                await jmthon(JoinChannelRequest("@u660p"))
+                await Sonic(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
             try:
-                await jmthon(JoinChannelRequest("@u660p"))
+                await Sonic(JoinChannelRequest("@u660p"))
             except BaseException:
                 pass
     except BaseException:
@@ -224,7 +224,7 @@ async def verifyLoggerGroup():
     flag = False
     if BOTLOG:
         try:
-            entity = await jmthon.get_entity(BOTLOG_CHATID)
+            entity = await Sonic.get_entity(BOTLOG_CHATID)
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
@@ -247,16 +247,16 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @u660p"
-        photobt = await jmthon.upload_file(file="Jmthon/razan/resources/start/Jmthonp.jpg")
+        photobt = await Sonic.upload_file(file="Sonic/razan/resources/start/Sonicp.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة اشعارات سونيك ", jmthon, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة اشعارات سونيك ", Sonic, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("⌯︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
-            entity = await jmthon.get_entity(PM_LOGGER_GROUP_ID)
+            entity = await Sonic.get_entity(PM_LOGGER_GROUP_ID)
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
@@ -276,9 +276,9 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "⌯︙ وظيفه الجروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الجروب نهائي \n  - @u660p"
-        photobt = await jmthon.upload_file(file="Jmthon/razan/resources/start/Jmthonp.jpg")
+        photobt = await Sonic.upload_file(file="Sonic/razan/resources/start/Sonicp.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين", jmthon, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة التخزين", Sonic, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تـم عمـل الجروب التخزين بنـجاح واضافة الـفارات الـيه.")

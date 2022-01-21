@@ -8,7 +8,7 @@ from ..Config import Config
 from ..core import LOADED_CMDS, PLG_INFO
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..core.session import jmthon
+from ..core.session import Sonic
 from ..helpers.tools import media_type
 from ..helpers.utils import _cattools, _catutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
@@ -37,11 +37,11 @@ def load_module(shortname, plugin_path=None):
         checkplugins(path)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.bot = jmthon
+        mod.bot = Sonic
         mod.LOGS = LOGS
         mod.Config = Config
         mod._format = _format
-        mod.tgbot = jmthon.tgbot
+        mod.tgbot = Sonic.tgbot
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
@@ -54,7 +54,7 @@ def load_module(shortname, plugin_path=None):
         mod.parse_pre = _format.parse_pre
         mod.edit_or_reply = edit_or_reply
         mod.logger = logging.getLogger(shortname)
-        mod.borg = jmthon
+        mod.borg = Sonic
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
@@ -71,23 +71,23 @@ def remove_plugin(shortname):
         for cmdname in cmd:
             if cmdname in LOADED_CMDS:
                 for i in LOADED_CMDS[cmdname]:
-                    jmthon.remove_event_handler(i)
+                    Sonic.remove_event_handler(i)
                 del LOADED_CMDS[cmdname]
         return True
     except Exception as e:
         LOGS.error(e)
     try:
         for i in LOAD_PLUG[shortname]:
-            jmthon.remove_event_handler(i)
+            Sonic.remove_event_handler(i)
         del LOAD_PLUG[shortname]
     except BaseException:
         pass
     try:
         name = f"userbot.plugins.{shortname}"
-        for i in reversed(range(len(jmthon._event_builders))):
-            ev, cb = jmthon._event_builders[i]
+        for i in reversed(range(len(Sonic._event_builders))):
+            ev, cb = Sonic._event_builders[i]
             if cb.__module__ == name:
-                del jmthon._event_builders[i]
+                del Sonic._event_builders[i]
     except BaseException:
         raise ValueError
 
