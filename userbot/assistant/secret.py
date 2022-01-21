@@ -4,10 +4,10 @@ import re
 
 from telethon.events import CallbackQuery
 
-from userbot import jmthon
+from userbot import Sonic
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"rzan_(.*)")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(b"rzan_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
     if os.path.exists("./userbot/secrets.txt"):
@@ -15,7 +15,7 @@ async def on_plug_in_callback_query_handler(event):
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]
-            ids = [userid, jmthon.uid]
+            ids = [userid, Sonic.uid]
             if event.query.user_id in ids:
                 encrypted_tcxt = message["text"]
                 reply_pop_up_alert = encrypted_tcxt

@@ -5,7 +5,7 @@ from telethon import *
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Jmthon.razan.resources.assistant import *
+from Sonic.razan.resources.assistant import *
 
 from userbot import bot
 from userbot.sql_helper.idadder_sql import add_usersid_in_db, already_added

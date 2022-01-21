@@ -1,10 +1,10 @@
-# @Jmthon - < https://t.me/U660P >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/U660P >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
+# This file is a part of < https://github.com/Sonic-AR/Sonic >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # ===============================================================
 
 import asyncio
@@ -12,7 +12,7 @@ from datetime import datetime
 
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.logger import logging
@@ -37,7 +37,7 @@ botusername = Config.TG_BOT_USERNAME
 cmhd = Config.COMMAND_HAND_LER
 
 
-@jmthon.bot_cmd(
+@Sonic.bot_cmd(
     pattern=f"^اوامري$",
     from_users=Config.OWNER_ID,
 )
@@ -48,7 +48,7 @@ async def bot_help(event):
     )
 
 
-@jmthon.bot_cmd(
+@Sonic.bot_cmd(
     pattern=f"^اذاعة$",
     from_users=Config.OWNER_ID,
 )
@@ -107,7 +107,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern=f"^المستخدمين$",
     command=("المستخدمين", plugin_category),
     info={
@@ -127,7 +127,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@jmthon.bot_cmd(
+@Sonic.bot_cmd(
     pattern=f"^حظر\s+([\s\S]*)",
     from_users=Config.OWNER_ID,
 )
@@ -161,7 +161,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@jmthon.bot_cmd(
+@Sonic.bot_cmd(
     pattern=f"^الغاء حظر(?:\s|$)([\s\S]*)",
     from_users=Config.OWNER_ID,
 )
@@ -189,7 +189,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern=f"^المحظورين$",
     command=("المحظورين", plugin_category),
     info={
@@ -209,7 +209,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern=f"^التكرار (تفعيل|تعطيل)$",
     command=("التكرار", plugin_category),
     info={

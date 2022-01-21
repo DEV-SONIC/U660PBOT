@@ -1,17 +1,17 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
+# This file is a part of < https://github.com/Sonic-AR/Sonic >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # ===============================================================
 from datetime import datetime
 from math import floor
 
 from telethon.utils import get_display_name
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.logger import logging
@@ -71,14 +71,14 @@ async def ban_user_from_bot(user, reason, reply_to=None):
     except Exception as e:
         LOGS.error(str(e))
     banned_msg = f"**تم حظرك من ااستخدام هذا البوت\nالسبب** : {reason}"
-    await jmthon.tgbot.send_message(user.id, banned_msg)
+    await Sonic.tgbot.send_message(user.id, banned_msg)
     info = f"**المستخدمين المحظورين**\
             \n\n👤 {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**الاسم الاول:** {user.first_name}\
             \n**الايدي:** `{user.id}`\
             \n**السبب:** `{reason}`"
     if BOTLOG:
-        await jmthon.send_message(BOTLOG_CHATID, info)
+        await Sonic.send_message(BOTLOG_CHATID, info)
     return info
 
 
@@ -90,11 +90,11 @@ async def unban_user_from_bot(user, reason, reply_to=None):
     banned_msg = f"**تم الغاء حظرك من البوت يمكنك التواصل مع مالك البوت.**"
     if reason is not None:
         banned_msg += f"\n**السبب:** {reason}"
-    await jmthon.tgbot.send_message(user.id, banned_msg)
+    await Sonic.tgbot.send_message(user.id, banned_msg)
     info = f"**غير المحظورين**\
             \n\n👤 {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**الأسم الاول:** {user.first_name}\
             \n**الايدي:** `{user.id}`"
     if BOTLOG:
-        await jmthon.send_message(BOTLOG_CHATID, info)
+        await Sonic.send_message(BOTLOG_CHATID, info)
     return info
