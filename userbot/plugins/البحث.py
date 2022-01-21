@@ -1,11 +1,11 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 # thanks for Dark cobra for this plugin 
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON-AR >
+# This file is a part of < https://github.com/Sonic-AR/Sonic-AR >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JMTHON-AR/blob/master/LICENSE 
+# < https://github.com/Sonic-AR/Sonic-AR/blob/master/LICENSE 
 # ===============================================================
 import asyncio
 #

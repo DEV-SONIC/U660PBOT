@@ -1,6 +1,6 @@
 from telethon import Button, events
 
-from Jmthon.razan.resources.mybot import *
+from Sonic.razan.resources.mybot import *
 
 from ..Config import Config
 
@@ -28,14 +28,14 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             elif ROZ_PIC:
                 result = builder.document(
                     ROZ_PIC,
-                    title="JMTHON - USERBOT",
+                    title="Sonic - USERBOT",
                     text=ROZ,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
                 result = builder.article(
-                    title="JMTHON - USERBOT",
+                    title="Sonic - USERBOT",
                     text=ROZ,
                     buttons=buttons,
                     link_preview=False,

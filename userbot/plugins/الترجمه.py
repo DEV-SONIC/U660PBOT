@@ -2,14 +2,14 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify
 
 plugin_category = "utils"
 
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 
 
@@ -25,7 +25,7 @@ async def getTranslate(text, **kwargs):
     return result
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ترجمه ([\s\S]*)",
     command=("ترجمه", plugin_category),
     info={

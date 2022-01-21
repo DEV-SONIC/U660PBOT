@@ -1,9 +1,9 @@
-# t.me/JMTHON
+# t.me/Sonic
 import logging
 
 from userbot.utils import admin_cmd
 
-from userbot import CMD_HELP, jmthon
+from userbot import CMD_HELP, Sonic
 
 logger = logging.getLogger(__name__)
 
@@ -12,8 +12,8 @@ if 1 == 1:
     name = "Profile Photos"
     client = borg
 
-    @jmthon.on(admin_cmd(pattern="صورة(.*)"))
-    @jmthon.on(sudo_cmd(pattern="صورة(.*)", allow_sudo=True))
+    @Sonic.on(admin_cmd(pattern="صورة(.*)"))
+    @Sonic.on(sudo_cmd(pattern="صورة(.*)", allow_sudo=True))
     async def potocmd(event):
         id = "".join(event.raw_text.split(maxsplit=2)[1:])
         user = await event.get_reply_message()

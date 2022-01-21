@@ -1,17 +1,17 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 
 import requests
 from validators.url import url
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="دنس(?:\s|$)([\s\S]*)",
     command=("دنس", plugin_category),
     info={
@@ -44,8 +44,8 @@ async def _(event):
         await edit_or_reply(event, f"⌯︙- لم استطع ايجاد `{input_str}` في الانترنت")
 
 
-# urltools for jmthon
-@jmthon.ar_cmd(
+# urltools for Sonic
+@Sonic.ar_cmd(
     pattern="مصغر(?:\s|$)([\s\S]*)",
     command=("مصغر", plugin_category),
     info={
@@ -82,10 +82,10 @@ async def _(event):
         await edit_or_reply(event, "⌯︙ هـنالك شي خطـا حاول لاحقـا")
 
 
-# urltools for jmthon
+# urltools for Sonic
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اخفاء(?:\s|$)([\s\S]*)",
     command=("اخفاء", plugin_category),
     info={

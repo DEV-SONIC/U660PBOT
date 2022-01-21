@@ -29,7 +29,7 @@ from telethon.tl.types import (  # جميع الحقوق محفوظة ديربا
     MessageMediaPhoto,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID, jmthon
+from userbot import BOTLOG, BOTLOG_CHATID, Sonic
 from userbot.utils import admin_cmd, errors_handler
 
 from ..core.logger import logging
@@ -76,7 +76,7 @@ from telethon.errors import BadRequestError
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -120,7 +120,7 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="ضع صورة"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="ضع صورة"))
 @errors_handler
 async def set_group_photo(gpic):
     if not gpic.is_group:
@@ -153,7 +153,7 @@ async def set_group_photo(gpic):
             x = await gpic.eor(x, PP_ERROR)
 
 
-@jmthon.on(admin_cmd("رفع مشرف(?: |$)(.*)"))
+@Sonic.on(admin_cmd("رفع مشرف(?: |$)(.*)"))
 @errors_handler
 async def promote(promt):
     chat = await promt.get_chat()
@@ -191,7 +191,7 @@ async def promote(promt):
         )
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="تنزيل مشرف(?: |$)(.*)"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="تنزيل مشرف(?: |$)(.*)"))
 @errors_handler
 async def demote(dmodroz):
     chat = await dmodroz.get_chat()
@@ -233,7 +233,7 @@ async def demote(dmodroz):
         )
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="الادمنية$"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="الادمنية$"))
 @errors_handler
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
@@ -254,7 +254,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="تثبيت(?: |$)(.*)"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="تثبيت(?: |$)(.*)"))
 @errors_handler
 async def pin(msg):
     chat = await msg.get_chat()
@@ -287,7 +287,7 @@ async def pin(msg):
         )
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="طرد(?: |$)(.*)"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="طرد(?: |$)(.*)"))
 @errors_handler
 async def kick(usr):
     chat = await usr.get_chat()
@@ -320,7 +320,7 @@ async def kick(usr):
         )
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="المستخدمين ?(.*)"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="المستخدمين ?(.*)"))
 @errors_handler
 async def get_users(show):
     info = await show.client.get_entity(show.chat_id)
@@ -407,7 +407,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@jmthon.on(admin_cmd(pattern="حظر(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="حظر(?:\s|$)([\s\S]*)"))
 async def _ban_person(event):
     user, reason = await get_user_from_event(event)
     if not user:
@@ -451,7 +451,7 @@ async def _ban_person(event):
             )
 
 
-@jmthon.on(admin_cmd(pattern="الغاء حظر(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="الغاء حظر(?:\s|$)([\s\S]*)"))
 async def nothanos(event):
     user, _ = await get_user_from_event(event)
     if not user:
@@ -478,7 +478,7 @@ async def nothanos(event):
 # =================== الكـــــــــــــــتم  ===================  #
 
 
-@jmthon.on(admin_cmd(pattern="كتم(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="كتم(?:\s|$)([\s\S]*)"))
 async def startgmute(event):  # جميع الحقوق محفوظة ديربالك تخمط امك انيجها  #
     if event.is_private:
         await event.edit("**... قـد تحـدث بعـض المـشاكـل أو الأخـطاء ...**")
@@ -489,7 +489,7 @@ async def startgmute(event):  # جميع الحقوق محفوظة ديربال�
         user, reason = await get_user_from_event(event)
         if not user:
             return
-        if user.id == jmthon.uid:
+        if user.id == Sonic.uid:
             return await edit_or_reply(event, "**... . لمـاذا تࢪيـد كتم نفسـك؟  ...**")
         userid = user.id
     try:
@@ -540,7 +540,7 @@ async def startgmute(event):  # جميع الحقوق محفوظة ديربال�
 # =================== الغـــــــــــــاء الكـــــــــــــــتم  ===================  #
 
 # جميع الحقوق محفوظة ديربالك تخمط امك انيجها  #
-@jmthon.on(admin_cmd(pattern="الغاء كتم(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="الغاء كتم(?:\s|$)([\s\S]*)"))
 async def endgmute(event):
     if event.is_private:
         await event.edit("**... قـد تحـدث بعـض المـشاكـل أو الأخـطاء ...**")
@@ -551,7 +551,7 @@ async def endgmute(event):
         user, reason = await get_user_from_event(event)
         if not user:
             return  # جميع الحقوق محفوظة ديربالك تخمط امك انيجها  #
-        if user.id == jmthon.uid:
+        if user.id == Sonic.uid:
             return await edit_or_reply(event, "**... لمـاذا تࢪيـد كتم نفسـك؟ ...**")
         userid = user.id
     try:
@@ -597,7 +597,7 @@ async def endgmute(event):
 # ===================================== #
 
 
-@jmthon.ar_cmd(incoming=True)
+@Sonic.ar_cmd(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
@@ -605,7 +605,7 @@ async def watcher(event):
         # جميع الحقوق محفوظة ديربالك تخمط امك انيجها  #
 
 
-@jmthon.on(admin_cmd(pattern="الأحداث( -ر)?(?: |$)(\d*)?"))
+@Sonic.on(admin_cmd(pattern="الأحداث( -ر)?(?: |$)(\d*)?"))
 async def _iundlt(event):
     rozevent = await edit_or_reply(event, "يـتم الـبحث عن اخـر الاحداث")
     flag = event.pattern_match.group(1)
@@ -652,7 +652,7 @@ async def _iundlt(event):
 
 
 # جميع الحقوق محفوظة ديربالك تخمط امك انيجها  #
-@jmthon.on(admin_cmd(pattern="الغاء التثبيت( للكل|$)"))
+@Sonic.on(admin_cmd(pattern="الغاء التثبيت( للكل|$)"))
 async def pin(event):
     to_unpin = event.reply_to_msg_id
     options = (event.pattern_match.group(1)).strip()

@@ -3,7 +3,7 @@ import re
 
 from telethon.utils import get_display_name
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..sql_helper.filter_sql import (
@@ -17,7 +17,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(incoming=True)
+@Sonic.ar_cmd(incoming=True)
 async def filter_incoming_handler(event):  # sourcery no-metrics
     if event.sender_id == event.client.uid:
         return
@@ -90,7 +90,7 @@ async def filter_incoming_handler(event):  # sourcery no-metrics
             )
 
 
-@jmthon.on(admin_cmd(pattern="اضف رد (.*)"))
+@Sonic.on(admin_cmd(pattern="اضف رد (.*)"))
 async def add_new_filter(event):
     "To save the filter"
     keyword = event.pattern_match.group(1)
@@ -132,8 +132,8 @@ async def add_new_filter(event):
     await edit_or_reply(event, f"- هنالك خطا في وضع رد لـ {keyword}")
 
 
-@jmthon.on(admin_cmd(pattern="الردود$"))
-@jmthon.on(sudo_cmd(pattern="الردود$", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern="الردود$"))
+@Sonic.on(sudo_cmd(pattern="الردود$", allow_sudo=True))
 async def on_snip_list(event):
     OUT_STR = "**⌔∮ لاتوجـد ردود في هذه الدردشة**"
     filters = get_filters(event.chat_id)
@@ -149,7 +149,7 @@ async def on_snip_list(event):
     )
 
 
-@jmthon.on(admin_cmd(pattern="حذف رد ([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="حذف رد ([\s\S]*)"))
 async def remove_a_filter(event):
     filt = event.pattern_match.group(1)
     if not remove_filter(event.chat_id, filt):
@@ -158,7 +158,7 @@ async def remove_a_filter(event):
         await event.edit("الرد **{}** تم حذفه بنجاح  ✓".format(filt))
 
 
-@jmthon.on(admin_cmd(pattern="حذف الردود$"))
+@Sonic.on(admin_cmd(pattern="حذف الردود$"))
 async def on_all_snip_delete(event):
     "To delete all filters in that group."
     filters = get_filters(event.chat_id)

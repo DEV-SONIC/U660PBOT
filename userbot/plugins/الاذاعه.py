@@ -1,5 +1,5 @@
 from userbot import CMD_HELP
-from userbot import jmthon
+from userbot import Sonic
 from ..Config import Config
 
 LGROUP_CMD = Config.LGROUP_CMD or "للكروبات"
@@ -10,11 +10,11 @@ GCAST_BLACKLIST = [
     ]
 #
 
-@jmthon.on(admin_cmd(pattern=f"{LGROUP_CMD}(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern=f"{LGROUP_CMD}(?: |$)(.*)"))
 async def gcast(event):
-    jmthon = event.pattern_match.group(1)
-    if jmthon:
-        msg = jmthon
+    Sonic = event.pattern_match.group(1)
+    if Sonic:
+        msg = Sonic
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
@@ -36,11 +36,11 @@ async def gcast(event):
         f"**- تم بنجاح الأذاعة الى ** `{done}` **من الدردشات ، خطأ في ارسال الى ** `{er}` **من الدردشات**"
     )
     
-@jmthon.on(admin_cmd(pattern=f"{LPRIV_CMD}(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern=f"{LPRIV_CMD}(?: |$)(.*)"))
 async def gucast(event):
-    jmthon = event.pattern_match.group(1)
-    if jmthon:
-        msg = jmthon
+    Sonic = event.pattern_match.group(1)
+    if Sonic:
+        msg = Sonic
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:

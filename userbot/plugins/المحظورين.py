@@ -13,10 +13,10 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 from userbot.utils import admin_cmd
-from userbot import CMD_HELP, jmthon
+from userbot import CMD_HELP, Sonic
 
 
-@jmthon.on(admin_cmd(pattern="حذف المحظورين ?(.*)"))
+@Sonic.on(admin_cmd(pattern="حذف المحظورين ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -31,10 +31,10 @@ async def _(event):
         async for i in borg.iter_participants(
             event.chat_id, filter=ChannelParticipantsKicked, aggressive=True
         ):
-            jmthon = ChatBannedRights(until_date=0, view_messages=False)
+            Sonic = ChatBannedRights(until_date=0, view_messages=False)
             try:
                 await borg(
-                    functions.channels.EditBannedRequest(event.chat_id, i, jmthon)
+                    functions.channels.EditBannedRequest(event.chat_id, i, Sonic)
                 )
             except FloodWaitError as ex:
                 logger.warn("تم ايقاف لـ {} من الثواني".format(ex.seconds))

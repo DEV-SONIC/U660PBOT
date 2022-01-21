@@ -1,12 +1,12 @@
 import random
 
-from Jmthon.razan._islam import *
-from userbot import jmthon
+from Sonic.razan._islam import *
+from userbot import Sonic
 
 plugin_category = "extra"
 
 # by ~ @RR9R7
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اذكار الصباح",
     command=("اذكار الصباح", plugin_category),
 )
@@ -17,7 +17,7 @@ async def _(event):
 
 
 # by ~ @RR9R7
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اذكار المساء$",
     command=("اذكار المساء", plugin_category),
 )
@@ -28,7 +28,7 @@ async def _(event):
 
 
 # by ~ @RR 9R7
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="احاديث$",
     command=("احاديث", plugin_category),
 )
@@ -38,7 +38,7 @@ async def _(event):
         return await event.edit(f"{me}")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اذكار الاستيقاظ$",
     command=("اذكار الاستيقاظ", plugin_category),
 )
@@ -48,7 +48,7 @@ async def _(event):
         return await event.edit(f"{az}")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اذكار النوم$",
     command=("اذكار النوم", plugin_category),
 )
@@ -58,7 +58,7 @@ async def _(event):
         return await event.edit(f"{rr}")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اذكار الصلاة$",
     command=("اذكار الصلاة", plugin_category),
 )
@@ -68,11 +68,11 @@ async def _(event):
         return await event.edit(f"{rm}")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اوامر الاذكار$",
     command=("اوامر الاذكار", plugin_category),
 )
 async def _(event):
     await event.edit(
-        "قائمة اوامر الاذكار :\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n ⌯︙اختر احدى هذه القوائم\n\n- ( `.اذكار الصباح` ) \n- ( `.اذكار المساء` )   \n- (`.اذكار النوم`)\n- ( `.اذكار الصلاة`) \n- ( `.اذكار الاستيقاظ` ) \n- ( `.احاديث` )\n\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n⌔︙CH : @JMTHON"
+        "قائمة اوامر الاذكار :\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n ⌯︙اختر احدى هذه القوائم\n\n- ( `.اذكار الصباح` ) \n- ( `.اذكار المساء` )   \n- (`.اذكار النوم`)\n- ( `.اذكار الصلاة`) \n- ( `.اذكار الاستيقاظ` ) \n- ( `.احاديث` )\n\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n⌔︙CH : @Sonic"
     )

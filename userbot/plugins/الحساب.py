@@ -7,25 +7,25 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
 
-from userbot import jmthon, CMD_HELP
+from userbot import Sonic, CMD_HELP
 #
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
 
-@jmthon.on(admin_cmd(pattern="وضع بايو (.*)"))
+@Sonic.on(admin_cmd(pattern="وضع بايو (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     brzo = event.pattern_match.group(1)
     try:
-        await jmthon(functions.account.UpdateProfileRequest(about=brzo))
+        await Sonic(functions.account.UpdateProfileRequest(about=brzo))
         await event.edit("**- تم تغيير البايو بنجاح ✓**")
     except Exception as z:
         await event.edit(str(z))
 
 
-@jmthon.on(admin_cmd(pattern="وضع اسم ((.|\n)*)"))
+@Sonic.on(admin_cmd(pattern="وضع اسم ((.|\n)*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
     if "\\n" in rozname:
         first_name, last_name = rozname.split("\\n", 1)
     try:
-        await jmthon(
+        await Sonic(
             functions.account.UpdateProfileRequest(
                 first_name=first_name, last_name=last_name
             )
@@ -45,7 +45,7 @@ async def _(event):
         await event.edit(str(z))
 
 
-@jmthon.on(admin_cmd(pattern="وضع صورة"))
+@Sonic.on(admin_cmd(pattern="وضع صورة"))
 async def _(event):
     if event.fwd_from:
         return
@@ -55,7 +55,7 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     photo = None
     try:
-        photo = await jmthon.download_media(
+        photo = await Sonic.download_media(
             reply_message, Config.TMP_DOWNLOAD_DIRECTORY
         )
     except Exception as z:
@@ -63,9 +63,9 @@ async def _(event):
     else:
         if photo:
             await event.edit("**• يتم الرفع علر التيليجرام .  .  .**")
-            file = await jmthon.upload_file(photo)
+            file = await Sonic.upload_file(photo)
             try:
-                await jmthon(functions.photos.UploadProfilePhotoRequest(file))
+                await Sonic(functions.photos.UploadProfilePhotoRequest(file))
             except Exception as z:
                 await event.edit(str(z))
             else:
@@ -76,7 +76,7 @@ async def _(event):
         logger.warn(str(z))
 
 
-@jmthon.on(admin_cmd(pattern="حذف صورة ?(.*)"))
+@Sonic.on(admin_cmd(pattern="حذف صورة ?(.*)"))
 async def remove_profilepic(delpfp):
     group = delpfp.text[8:]
     if group == "all":
@@ -100,7 +100,7 @@ async def remove_profilepic(delpfp):
     await edit_delete(delpfp, f"⌔∮ تم حذف صـورة من صور حسابك بنجاح ✅")
 
 
-@jmthon.on(admin_cmd(pattern="انشائي$"))
+@Sonic.on(admin_cmd(pattern="انشائي$"))
 async def _(event):
     result = await event.client(GetAdminedPublicChannelsRequest())
     output_str = "- جميع القنوات والمجموعات التي قمت بأنشائها :\n"

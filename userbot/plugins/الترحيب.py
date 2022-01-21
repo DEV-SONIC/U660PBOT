@@ -1,8 +1,8 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 from telethon import events
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 from ..core.managers import edit_delete, edit_or_reply
@@ -22,7 +22,7 @@ WELCOME_CMD = Config.WELCOME_CMD or "ترحيب"
 WELCOMES_CMD = Config.WELCOMES_CMD or "الترحيبات"
 DELWELCOME_CMD = Config.DELWELCOME_CMD or "حذف الترحيبات"
 
-@jmthon.on(events.ChatAction)
+@Sonic.on(events.ChatAction)
 async def _(event):  # sourcery no-metrics
     cws = get_current_welcome_settings(event.chat_id)
     if (
@@ -87,7 +87,7 @@ async def _(event):  # sourcery no-metrics
         update_previous_welcome(event.chat_id, current_message.id)
 
 
-@jmthon.on(admin_cmd(pattern=f"{WELCOME_CMD}(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern=f"{WELCOME_CMD}(?:\s|$)([\s\S]*)"))
 async def save_welcome(event):
     msg = await event.get_reply_message()
     string = "".join(event.text.split(maxsplit=1)[1:])
@@ -121,7 +121,7 @@ async def save_welcome(event):
     await edit_or_reply("- هـنالك خـطأ في وضـع الـترحيب هـنا")
 
 
-@jmthon.on(admin_cmd(pattern=f"{DELWELCOME_CMD}$"))
+@Sonic.on(admin_cmd(pattern=f"{DELWELCOME_CMD}$"))
 async def del_welcome(event):
     "To turn off welcome message"
     if rm_welcome_setting(event.chat_id) is True:
@@ -130,7 +130,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "- ليـس لـدي اي تـرحيبـات بالأصـل")
 
 
-@jmthon.on(admin_cmd(pattern=f"{WELCOMES_CMD}$"))
+@Sonic.on(admin_cmd(pattern=f"{WELCOMES_CMD}$"))
 async def show_welcome(event):
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
@@ -150,7 +150,7 @@ async def show_welcome(event):
         await event.reply(cws.reply)
 
 
-@jmthon.on(admin_cmd(pattern="الترحيب السابق (تشغيل|ايقاف)$"))
+@Sonic.on(admin_cmd(pattern="الترحيب السابق (تشغيل|ايقاف)$"))
 async def del_welcome(event):
     "- لإيقاف أو تشغيل حذف رسالة الترحيب السابقة ."
     input_str = event.pattern_match.group(1)

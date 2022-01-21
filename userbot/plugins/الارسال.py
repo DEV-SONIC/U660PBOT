@@ -1,9 +1,9 @@
 #  قبل لا تفكر تخمط هذا الملف ترا الملف متعوب عليه لا تخمط واني حذرتك
-# حسب قوانين موقع github https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# حسب قوانين موقع github https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # تنص على انه اي شخص ياخذ الملف بدون ذكر حقوق طبع والنشر سيتم حذف حسابه من قبل صاحب الملف اقتضى التنوي
 # Copyright ©️ 2021 RR9R7 . All Rights Reserved
 # You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits -  (  @RR7PP  - @JMTHON  )
+# ##Credits -  (  @RR7PP  - @Sonic  )
 #
 from telethon.tl.types import Channel, MessageMediaWebPage
 from userbot.utils import admin_cmd
@@ -28,7 +28,7 @@ async def all_groups_id(roz):
     return rozgroups
 
 
-@jmthon.on(admin_cmd(pattern="ارسل$"))
+@Sonic.on(admin_cmd(pattern="ارسل$"))
 async def _(event):
     try:
         await event.delete()

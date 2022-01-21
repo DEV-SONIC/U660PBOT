@@ -3,7 +3,7 @@
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights, MessageEntityMentionName
 
-from userbot import jmthon, CMD_HELP
+from userbot import Sonic, CMD_HELP
 from userbot.utils import admin_cmd
 #
 
@@ -52,7 +52,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@jmthon.on(admin_cmd(pattern="ارفع ?(.*)"))
+@Sonic.on(admin_cmd(pattern="ارفع ?(.*)"))
 async def gben(userbot):
     dc = razan = userbot
     i = 0
@@ -107,7 +107,7 @@ async def gben(userbot):
     )
 
 
-@jmthon.on(admin_cmd(pattern="نزل ?(.*)"))
+@Sonic.on(admin_cmd(pattern="نزل ?(.*)"))
 async def gben(userbot):
     dc = razan = userbot
     i = 0

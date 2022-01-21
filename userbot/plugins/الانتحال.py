@@ -1,5 +1,5 @@
-# Copyright (C) 2021 JMTHON TEAM
-# t.me/JMTHON
+# Copyright (C) 2021 Sonic TEAM
+# t.me/Sonic
 import html
 
 from telethon.tl import functions
@@ -14,7 +14,7 @@ from . import (
     DEFAULT_BIO,
     edit_delete,
     get_user_from_event,
-    jmthon,
+    Sonic,
 )
 
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
@@ -23,26 +23,26 @@ DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "الـحمد لله عـ�
 CLONE_CMD = Config.CLONE_CMD or "انتحال"
 RETRUN_CMD = Config.RETRUN_CMD or "اعادة"
 
-@jmthon.on(admin_cmd(pattern=f"{CLONE_CMD}(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern=f"{CLONE_CMD}(?:\s|$)([\s\S]*)"))
 async def _(event):
-    reply_jmthon, error_i_a = await get_user_from_event(event)
-    if reply_jmthon is None:
+    reply_Sonic, error_i_a = await get_user_from_event(event)
+    if reply_Sonic is None:
         return
-    user_id = reply_jmthon.id
+    user_id = reply_Sonic.id
     profile_pic = await event.client.download_profile_photo(user_id, Config.TEMP_DIR)
-    first_name = html.escape(reply_jmthon.first_name)
+    first_name = html.escape(reply_Sonic.first_name)
     if first_name is not None:
         first_name = first_name.replace("\u2060", "")
-    last_name = reply_jmthon.last_name
+    last_name = reply_Sonic.last_name
     if last_name is not None:
         last_name = html.escape(last_name)
         last_name = last_name.replace("\u2060", "")
     if last_name is None:
         last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
-    reply_jmthon = await event.client(GetFullUserRequest(reply_jmthon.id))
-    user_bio = reply_jmthon.about
+    reply_Sonic = await event.client(GetFullUserRequest(reply_Sonic.id))
+    user_bio = reply_Sonic.about
     if user_bio is not None:
-        user_bio = reply_jmthon.about
+        user_bio = reply_Sonic.about
     await event.client(functions.account.UpdateProfileRequest(first_name=first_name))
     await event.client(functions.account.UpdateProfileRequest(last_name=last_name))
     await event.client(functions.account.UpdateProfileRequest(about=user_bio))
@@ -56,7 +56,7 @@ async def _(event):
         )
 
 
-@jmthon.on(admin_cmd(pattern=f"{RETRUN_CMD}$"))
+@Sonic.on(admin_cmd(pattern=f"{RETRUN_CMD}$"))
 async def _(event):
     name = f"{DEFAULTUSER}"
     roz = ""

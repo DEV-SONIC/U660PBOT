@@ -7,7 +7,7 @@ from textwrap import wrap
 from PIL import Image, ImageDraw, ImageFont
 from requests import get
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -16,7 +16,7 @@ from . import ALIVE_NAME
 plugin_category = "extra"
 
 # كـتابة وتعـديل  @RR7PP
-# JMTHON ™
+# Sonic ™
 async def amongus_gen(text: str, clr: int) -> str:
     url = "https://github.com/JMTHON-AR/Jmthon-Resources/raw/master/Resources/Amongus/"
     font = ImageFont.truetype(
@@ -74,7 +74,7 @@ async def get_imposter_img(text: str) -> str:
     return webp_file
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="من القاتل(|بريء) ([\s\S]*)",
     command=("من القاتل", plugin_category),
     info={
@@ -167,7 +167,7 @@ async def _(event):
         await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="القاتل(|بريء) ([\s\S]*)",
     command=("القاتل", plugin_category),
     info={

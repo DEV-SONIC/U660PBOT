@@ -1,7 +1,7 @@
 from urlextract import URLExtract
 from validators.url import url
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 from ..Config import Config
@@ -37,7 +37,7 @@ oldvars = {
 }
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="(اضف_|معلومات_|حذف_)فار(?: |$)([\s\S]*)",
     command=("فار", plugin_category),
     info={
@@ -116,7 +116,7 @@ async def bad(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تخصيص (pmpermit|pmpic|pmblock|startmsg)$",
     command=("تخصيص", plugin_category),
     info={
@@ -180,7 +180,7 @@ async def custom_catuserbot(event):
         await event.client.send_message(BOTLOG_CHATID, text, silent=True)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ازالة تخصيص (pmpermit|pmpic|pmblock|startmsg)$",
     command=("ازالة تخصيص", plugin_category),
     info={
@@ -223,4 +223,4 @@ async def custom_catuserbot(event):
             f" ⌯︙حـذف فـار\
                     \n**{input_str}** تـم حـذف هـذا الفـار",
         )
-#Jmthon
+#Sonic

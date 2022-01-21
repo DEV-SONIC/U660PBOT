@@ -6,7 +6,7 @@
 import os
 from datetime import datetime
 
-from userbot import jmthon
+from userbot import Sonic
 #
 from . import hmention, reply_id
 
@@ -24,7 +24,7 @@ PING_PIC = os.environ.get("PING_PIC") or (
 JM_TXT = os.environ.get("PING_TEXT") or "مـن لا يتعلم من الماضي لا يرحمه المستقبل  . 🖤"
 
 
-@jmthon.on(admin_cmd(pattern="بنك$"))
+@Sonic.on(admin_cmd(pattern="بنك$"))
 async def _(event):
     if event.fwd_from:
         return

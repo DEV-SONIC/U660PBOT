@@ -9,7 +9,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from youtubesearchpython import Video
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -35,7 +35,7 @@ SONGBOT_BLOCKED_STRING = (
 # =========================================================== #
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اغنية(320)?(?:\s|$)([\s\S]*)",
     command=("بحث", plugin_category),
     info={
@@ -125,7 +125,7 @@ async def delete_messages(event, chat, from_message):
     await event.client.send_read_acknowledge(chat)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="فيديو(?:\s|$)([\s\S]*)",
     command=("فيديو", plugin_category),
     info={
@@ -201,7 +201,7 @@ async def _(event):
             os.remove(files)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="نتائج البحث$",
     command=("نتائج البحث", plugin_category),
     info={

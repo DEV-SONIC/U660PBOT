@@ -1,13 +1,13 @@
 import asyncio
 import random
 
-from Jmthon.razan.resources.strings import *
-from userbot import jmthon
+from Sonic.razan.resources.strings import *
+from userbot import Sonic
 
 plugin_category = "extra"
 
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="م20$",
     command=("م20", plugin_category),
 )
@@ -19,7 +19,7 @@ async def _(event):
 
 
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الزخرفة$",
     command=("الزخرفة", plugin_category),
 )
@@ -46,7 +46,7 @@ async def _(event):
 
 
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اسماء تمبلر$",
     command=("اسماء تمبلر", plugin_category),
 )
@@ -58,7 +58,7 @@ async def _(event):
 
 
 # by ~ @RR 9R7
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="البايو$",
     command=("البايو", plugin_category),
 )
@@ -69,7 +69,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الاختصارات$",
     command=("الاختصارات", plugin_category),
 )
@@ -80,7 +80,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بايو اجنبي$",
     command=("بايو اجنبي", plugin_category),
 )
@@ -91,7 +91,7 @@ async def _(event):
     return await event.edit(f"{arj}")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بايو عربي$",
     command=("بايو عربي", plugin_category),
 )
@@ -103,7 +103,7 @@ async def _(event):
 
 
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اشهر مزخرفة$",
     command=("اشهر مزخرفة", plugin_category),
 )
@@ -151,7 +151,7 @@ async def _(event):
             "-𝐒𝐀𝐓𝐔𝐑𝐃𝐀𝐘.♡"
         )
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اسماء عربية$",
     command=("اسماء عربية", plugin_category),
 )
@@ -189,7 +189,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="شباب1$",
     command=("شباب1", plugin_category),
 )
@@ -234,7 +234,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="شباب2$",
     command=("شباب2", plugin_category),
 )
@@ -286,7 +286,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بنات1$",
     command=("بنات1", plugin_category),
 )
@@ -344,7 +344,7 @@ async def _(event):
             "𓂐 𝘼𝙈𝙔  𖠛 ."
         )
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بنات2$",
     command=("بنات2", plugin_category),
 )
@@ -386,7 +386,7 @@ async def _(event):
             "𝄇 𝗞𝗢𝗞𝗔𝆹𝅥𝅮 𝄆💘"
         )
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="قنوات$",
     command=("قنوات", plugin_category),
 )
@@ -441,7 +441,7 @@ async def _(event):
 
 # ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  #
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اختصارات1$",
     command=("اختصارات1", plugin_category),
 )
@@ -539,7 +539,7 @@ async def _(event):
 
 # ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  #
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اختصارات2$",
     command=("اختصارات2", plugin_category),
 )
@@ -580,7 +580,7 @@ async def _(event):
 
 # ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  #
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اختصارات3$",
     command=("اختصارات3", plugin_category),
 )
@@ -632,7 +632,7 @@ async def _(event):
 
 # ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  #
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اختصارات4$",
     command=("اختصارات4", plugin_category),
 )
@@ -682,7 +682,7 @@ async def _(event):
 
 # ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  #
 # by ~ @U660P
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اختصارات5$",
     command=("اختصارات5", plugin_category),
 )

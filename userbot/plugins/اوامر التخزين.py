@@ -1,4 +1,4 @@
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 from ..Config import Config
@@ -21,7 +21,7 @@ class LOG_CHATS:
 LOG_CHATS_ = LOG_CHATS()
 
 
-@jmthon.ar_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
+@Sonic.ar_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def monito_p_m_s(event):
     if Config.PM_LOGGER_GROUP_ID == -100:
         return
@@ -61,7 +61,7 @@ async def monito_p_m_s(event):
                 LOGS.warn(str(e))
 
 
-@jmthon.ar_cmd(incoming=True, func=lambda e: e.mentioned, edited=False, forword=None)
+@Sonic.ar_cmd(incoming=True, func=lambda e: e.mentioned, edited=False, forword=None)
 async def log_tagged_messages(event):
     hmm = await event.get_chat()
     from .afk import AFK_
@@ -100,7 +100,7 @@ async def log_tagged_messages(event):
         )
 
 
-@jmthon.on(admin_cmd(pattern="تخزين الخاص (تشغيل|ايقاف)$"))
+@Sonic.on(admin_cmd(pattern="تخزين الخاص (تشغيل|ايقاف)$"))
 async def set_pmlog(event):
     "لتشغـيل او ايقـاف تخـزين رسائل الـخاص"
     input_str = event.pattern_match.group(1)
@@ -125,7 +125,7 @@ async def set_pmlog(event):
         await event.edit("**⌯︙ تـخزين رسـائل الخـاص بالفـعل معـطلة ✅**")
 
 
-@jmthon.on(admin_cmd(pattern="تخزين الجروبات (تشغيل|ايقاف)$"))
+@Sonic.on(admin_cmd(pattern="تخزين الجروبات (تشغيل|ايقاف)$"))
 async def set_grplog(event):
     "لتشغـيل او ايقـاف تخـزين رسائل الجروبات"
     input_str = event.pattern_match.group(1)

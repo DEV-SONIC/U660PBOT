@@ -8,7 +8,7 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 #
-from userbot import HEROKU_APP, UPSTREAM_REPO_URL, jmthon
+from userbot import HEROKU_APP, UPSTREAM_REPO_URL, Sonic
 
 from ..Config import Config
 from ..core.logger import logging
@@ -182,7 +182,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         pass
 
 
-@jmthon.on(admin_cmd(pattern="تحديث(| الان)?$"))
+@Sonic.on(admin_cmd(pattern="تحديث(| الان)?$"))
 async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()

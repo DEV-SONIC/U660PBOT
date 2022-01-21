@@ -1,6 +1,6 @@
 from telethon.tl.types import Channel, MessageMediaWebPage
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 plugin_category = "extra"
@@ -24,7 +24,7 @@ async def all_groups_id(roz):
     return rozgroups
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ارسل$",
     command=("ارسل", plugin_category),
 )

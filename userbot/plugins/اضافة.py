@@ -7,7 +7,7 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 from ..sql_helper.globals import gvarstatus
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd
 
 from ..Config import Config
@@ -72,7 +72,7 @@ def user_full_name(user):
 
 
 
-@jmthon.on(admin_cmd(pattern=f"{ADD_CMD} ?(.*)"))
+@Sonic.on(admin_cmd(pattern=f"{ADD_CMD} ?(.*)"))
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
@@ -80,7 +80,7 @@ async def get_users(event):
         roz = await event.reply("**▾∮ تتـم العـملية انتظـࢪ قليلا 🧸♥ ...**")
     else:
         roz = await event.edit("**▾∮ تتـم العـملية انتظـࢪ قليلا 🧸♥ ...**.")
-    JMTHON = await get_chatinfo(event)
+    Sonic = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
         return await roz.edit("**▾∮ لا يمكننـي اضافـة المـستخدمين هـنا**")
@@ -91,7 +91,7 @@ async def get_users(event):
     await roz.edit(
         "**▾∮ حـالة الأضافة:**\n\n**▾∮ تتـم جـمع معـلومات الـمستخدمين 🔄 ...⏣**"
     )
-    async for user in event.client.iter_participants(JMTHON.full_chat.id):
+    async for user in event.client.iter_participants(Sonic.full_chat.id):
         try:
             if error.startswith("Too"):
                 return (

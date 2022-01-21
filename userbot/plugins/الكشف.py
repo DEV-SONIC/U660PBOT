@@ -6,7 +6,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 from ..Config import Config
@@ -80,7 +80,7 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="كشف(?:\s|$)([\s\S]*)",
     command=("كشف", plugin_category),
     info={
@@ -150,7 +150,7 @@ async def _(event):
     await edit_or_reply(catevent, caption)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ايدي(?:\s|$)([\s\S]*)",
     command=("ايدي", plugin_category),
     info={
@@ -194,7 +194,7 @@ async def who(event):
 
 # كـتابة  @RR7PP
 # تعديل وترتيب  @SBB_B
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="رابط الحساب(?:\s|$)([\s\S]*)",
     command=("رابط الحساب", plugin_category),
     info={

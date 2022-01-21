@@ -1,9 +1,9 @@
 """
 created by @RR7PP
-Idea by @JMTHON
+Idea by @Sonic
 """
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.echo_sql import (
@@ -20,13 +20,13 @@ from . import get_user_from_event
 plugin_category = "fun"
 
 
-@jmthon.on(admin_cmd(pattern="تقليد$"))
+@Sonic.on(admin_cmd(pattern="تقليد$"))
 async def echo(event):
     "To echo the user messages"
     if event.reply_to_msg_id is None:
         return await edit_or_reply(event, "⌔∮ يرجى الرد على الشخص الذي تـريد ازعاجه ،")
-    jmthonevent = await edit_or_reply(event, "⌔∮ يتم تفعيل هذا الامر انتظر قليلا ،")
-    user, rank = await get_user_from_event(event, jmthonevent, nogroup=True)
+    Sonicevent = await edit_or_reply(event, "⌔∮ يتم تفعيل هذا الامر انتظر قليلا ،")
+    user, rank = await get_user_from_event(event, Sonicevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -47,15 +47,15 @@ async def echo(event):
     try:
         addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
-        await edit_delete(jmthonevent, f"⌔∮ خطأ\n`{str(e)}`")
+        await edit_delete(Sonicevent, f"⌔∮ خطأ\n`{str(e)}`")
     else:
         await edit_or_reply(
-            jmthonevent,
+            Sonicevent,
             "**⌔∮ تـم تفعـيل امـر التقليد علـى هذا الشـخص\nسـيتم تقليـد جميع رسائلـه هـنا**",
         )
 
 
-@jmthon.on(admin_cmd(pattern="مسح المقلدهم"))
+@Sonic.on(admin_cmd(pattern="مسح المقلدهم"))
 async def echo(event):
     "To stop echoing the user messages"
     if event.reply_to_msg_id is None:
@@ -76,7 +76,7 @@ async def echo(event):
         await edit_or_reply(event, "العضو لم يتم تفعيل وضع لازعاج عليه")
 
 
-@jmthon.on(admin_cmd(pattern="الغاء التقليد( -a)?"))
+@Sonic.on(admin_cmd(pattern="الغاء التقليد( -a)?"))
 async def echo(event):
     "To delete echo in this chat."
     input_str = event.pattern_match.group(1)
@@ -102,7 +102,7 @@ async def echo(event):
             await edit_or_reply(event, "⌯︙تـم ايقاف وضـع الازعاج على الجميع بنجاح ✅")
 
 
-@jmthon.on(admin_cmd(pattern="المقلدهم( -a)?$"))
+@Sonic.on(admin_cmd(pattern="المقلدهم( -a)?$"))
 async def echo(event):  # sourcery no-metrics
     "To list all users on who you enabled echoing."
     input_str = event.pattern_match.group(1)
@@ -153,7 +153,7 @@ async def echo(event):  # sourcery no-metrics
     await edit_or_reply(event, output_str)
 
 
-@jmthon.ar_cmd(incoming=True, edited=False)
+@Sonic.ar_cmd(incoming=True, edited=False)
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker

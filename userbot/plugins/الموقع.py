@@ -1,7 +1,7 @@
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..helpers import reply_id
@@ -9,7 +9,7 @@ from ..helpers import reply_id
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="موقع ([\s\S]*)",
     command=("موقع", plugin_category),
     info={

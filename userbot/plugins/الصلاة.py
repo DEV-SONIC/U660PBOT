@@ -4,12 +4,12 @@ import json
 import requests
 
 # ترجمه فريق سونيك على التيلكرام
-from . import edit_delete, edit_or_reply, jmthon
+from . import edit_delete, edit_or_reply, Sonic
 
 plugin_category = "extra"
 
 # ترجمه فريق سونيك على التيلكرام
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="صلاة(?: |$)(.*)",
     command=("صلاة", plugin_category),
     info={
@@ -31,7 +31,7 @@ async def get_adzan(adzan):
         )  # ترجمه فريق سونيك على التيلكرام
         return
     result = json.loads(request.text)
-    jmthonresult = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
+    Sonicresult = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
             \n\n<b>المـدينة     : </b><i>{result['results']['location']['city']}</i>\
             \n<b>الـدولة  : </b><i>{result['results']['location']['country']}</i>\
             \n<b>التـاريخ     : </b><i>{result['results']['datetime'][0]['date']['gregorian']}</i>\
@@ -46,8 +46,8 @@ async def get_adzan(adzan):
             \n<b>العشـاء     : </b><i>{result['results']['datetime'][0]['times']['Isha']}</i>\
             \n<b>منتـصف الليل : </b><i>{result['results']['datetime'][0]['times']['Midnight']}</i>\
     "
-    await edit_or_reply(adzan, jmthonresult, "html")
+    await edit_or_reply(adzan, Sonicresult, "html")
 
 
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP

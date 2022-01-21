@@ -6,7 +6,7 @@ from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import ChatBannedRights
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
@@ -15,11 +15,11 @@ from ..utils import is_admin
 from . import BOTLOG, get_user_from_event
 
 
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 plugin_category = "admin" 
 
-@jmthon.on(admin_cmd(pattern="قفل (.*)"))
+@Sonic.on(admin_cmd(pattern="قفل (.*)"))
 async def _(event):  # sourcery no-metrics
     "To lock the given permission for entire group."
     input_str = event.pattern_match.group(1)
@@ -176,7 +176,7 @@ async def _(event):  # sourcery no-metrics
             )
 
 
-@jmthon.on(admin_cmd(pattern="فتح (.*)")) 
+@Sonic.on(admin_cmd(pattern="فتح (.*)")) 
 async def _(event):  # sourcery no-metrics
     "To unlock the given permission for entire group."
     input_str = event.pattern_match.group(1)
@@ -330,7 +330,7 @@ async def _(event):  # sourcery no-metrics
 
 
 # BY  @RR7PP  -  @UUNZZ
-@jmthon.on(admin_cmd(pattern="الصلاحيات$")) 
+@Sonic.on(admin_cmd(pattern="الصلاحيات$")) 
 async def _(event):  # sourcery no-metrics
     "To see the active locks in the current group"
     res = ""
@@ -382,7 +382,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, res)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="plock (.*)",
     command=("plock", plugin_category),
     info={
@@ -629,7 +629,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="punlock (.*)",
     command=("punlock", plugin_category),
     info={
@@ -880,7 +880,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="uperm(?: |$)(.*)",
     command=("uperm", plugin_category),
     info={
@@ -957,7 +957,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, output)
 
 
-@jmthon.ar_cmd(incoming=True)
+@Sonic.ar_cmd(incoming=True)
 async def check_incoming_messages(event):  # sourcery no-metrics
     if not event.is_private:
         chat = await event.get_chat()
@@ -1023,7 +1023,7 @@ async def check_incoming_messages(event):  # sourcery no-metrics
                 update_lock(peer_id, "url", False)
 
 
-@jmthon.on(events.ChatAction())
+@Sonic.on(events.ChatAction())
 async def _(event):
     if not event.is_private:
         chat = await event.get_chat()

@@ -3,9 +3,9 @@ import re
 from telethon import Button, events
 from telethon.events import CallbackQuery
 
-from Jmthon.razan.resources.assistant import *
-from Jmthon.razan.resources.mybot import *
-from userbot import jmthon
+from Sonic.razan.resources.assistant import *
+from Sonic.razan.resources.mybot import *
+from userbot import Sonic
 from ..core import check_owner
 from ..Config import Config
 
@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await bot.get_me()
         if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
-                [Button.inline("• اوامر الادمن •", data="jmthon0")],
+                [Button.inline("• اوامر الادمن •", data="Sonic0")],
                 [
                     Button.inline("• اوامر البوت •", data="rozbot"),
                     Button.inline("• الحساب •", data="Jmrz"),
@@ -54,7 +54,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 ],
             ]
             result = builder.article(
-                    title="JMTHON - USERBOT",
+                    title="Sonic - USERBOT",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
@@ -74,91 +74,91 @@ async def repo(event):
     await event.delete()
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"jmthon0")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"Sonic0")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="jrzst"),]]
     await event.edit(ROZADM, buttons=buttons)
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"jrzst")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"jrzst")))
 @check_owner
 async def _(event):
     butze = [[Button.inline("التالي", data="tslrzj"),]]
     await event.edit(GRTSTI, buttons=butze)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"tslrzj")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"tslrzj")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="krrznd"),]]
     await event.edit(JMAN, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"krrznd")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"krrznd")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="rozbot"),]]
     await event.edit(TKPRZ, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"rozbot")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"rozbot")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="Jmrz"),]]
     await event.edit(ROZBOT, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"Jmrz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"Jmrz")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="r7brz"),]]
     await event.edit(JROZT, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"r7brz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"r7brz")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="sejrz"),]]
     await event.edit(JMTRD, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"sejrz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"sejrz")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="gro"),]]
     await event.edit(ROZSEG, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"gro")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"gro")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="grrz"),]]
     await event.edit(JMGR1,buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"grrz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"grrz")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="iiers"),]]
     await event.edit(ROZPRV, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"iiers")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"iiers")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="rfhrz"),]]
     await event.edit(HERP, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"rfhrz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"rfhrz")))
 @check_owner
 async def _(event):
     buttons = [[Button.inline("التالي", data="uscuxrz"),]]
     await event.edit(T7SHIZ, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"uscuxrz")))
+@Sonic.tgbot.on(CallbackQuery(data=re.compile(rb"uscuxrz")))
 @check_owner
 async def _(event):
-    buttons = [[Button.inline("رجوع", data="jmthon0"),]]
+    buttons = [[Button.inline("رجوع", data="Sonic0"),]]
     await event.edit(CLORN, buttons=buttons)

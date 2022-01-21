@@ -1,6 +1,6 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
-from userbot import jmthon
+from userbot import Sonic
 from . import *
 from ..core.managers import edit_delete as eod, edit_or_reply as eor
 
@@ -21,7 +21,7 @@ def text_set(text):
     return lines[:25]
     
 
-@jmthon.on(admin_cmd(pattern="اكتب ?(.*)"))
+@Sonic.on(admin_cmd(pattern="اكتب ?(.*)"))
 async def writer(e):
     if e.reply_to:
         reply = await e.get_reply_message()
@@ -30,16 +30,16 @@ async def writer(e):
         text = e.text.split(maxsplit=1)[1]
     else:
         return await e.edit("- يجب عليك الرد على نص اولا")
-    img = Image.open("Jmthon/mhd/template.jpg")
+    img = Image.open("Sonic/mhd/template.jpg")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("Jmthon/mhd/arjmthon.ttf", 30)
+    font = ImageFont.truetype("Sonic/mhd/arSonic.ttf", 30)
     x, y = 150, 140
     lines = text_set(text)
     line_height = font.getsize("hg")[1]
     for line in lines:
         draw.text((x, y), line, fill=(1, 22, 55), font=font)
         y = y + line_height - 5
-    file = "jmthon.jpg"
+    file = "Sonic.jpg"
     img.save(file)
     await e.reply(file=file)
     os.remove(file)

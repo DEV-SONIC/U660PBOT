@@ -6,7 +6,7 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
@@ -104,7 +104,7 @@ async def spam_function(event, RR7PP, cat, sleeptimem, sleeptimet, DelaySpam=Fal
             )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="كرر (.*)",
     command=("كرر", plugin_category),
     info={
@@ -137,7 +137,7 @@ async def spammer(event):
     await spam_function(event, RR7PP, cat, sleeptimem, sleeptimet)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مكرر (.*)",
     command=("مكرر", plugin_category),
     info={
@@ -165,7 +165,7 @@ async def spammer(event):
     await spam_function(event, reply, cat, sleeptimem, sleeptimet, DelaySpam=True)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تكرار الملصق$",
     command=("تكرار الملصق", plugin_category),
     info={
@@ -239,7 +239,7 @@ async def stickerpack_spam(event):
         await event.client.send_file(BOTLOG_CHATID, reqd_sticker_set.documents[0])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="سبام (.*)",
     command=("سبام", plugin_category),
     info={
@@ -271,7 +271,7 @@ async def tmeme(event):
             )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="وسبام (.*)",
     command=("وسبام", plugin_category),
     info={

@@ -1,17 +1,17 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON-AR >
+# This file is a part of < https://github.com/Sonic-AR/Sonic-AR >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JMTHON-AR/blob/master/LICENSE 
+# < https://github.com/Sonic-AR/Sonic-AR/blob/master/LICENSE 
 # ===============================================================import threading
 #
 import re
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd
 
-@jmthon.on(admin_cmd(pattern="اكس او$"))
+@Sonic.on(admin_cmd(pattern="اكس او$"))
 # كتابة وتعديل فريق سونيك  #@U660P
 async def gamez(event):
     if event.fwd_from:
@@ -48,7 +48,7 @@ def deEmojfy(inputString: str) -> str:
     return re.sub(IF_EMOJE, "", inputString)
 
 
-@jmthon.on(admin_cmd(pattern="شطرنج(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="شطرنج(?: |$)(.*)"))
 async def nope(rz):
     yes = rz.pattern_match.group(1)
     if not yes:

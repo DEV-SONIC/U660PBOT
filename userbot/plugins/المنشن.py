@@ -1,13 +1,13 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..helpers.utils import get_user_from_event, reply_id
 
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ابلاغ$",
     command=("ابلاغ", plugin_category),
     info={
@@ -29,7 +29,7 @@ async def _(event):
     await event.delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تاك([\s\S]*)",
     command=("تاك", plugin_category),
     info={

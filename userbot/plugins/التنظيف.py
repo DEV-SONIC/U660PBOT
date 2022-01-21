@@ -16,7 +16,7 @@ from telethon.tl.types import (
     InputMessagesFilterVoice,
 )
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from . import BOTLOG, BOTLOG_CHATID
@@ -41,7 +41,7 @@ purgetype = {
 }
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مسح(\s*| \d+)$",
     command=("مسح", plugin_category),
     info={
@@ -88,7 +88,7 @@ async def delete_it(event):
         await event.delete()
 
 
-@jmthon.on(admin_cmd(pattern="حذف رسائلي"))
+@Sonic.on(admin_cmd(pattern="حذف رسائلي"))
 async def purgeme(event):
     "To purge your latest messages."
     message = event.text
@@ -114,7 +114,7 @@ async def purgeme(event):
 
 
 # TODO: only sticker messages.
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تنظيف(?:\s|$)([\s\S]*)",
     command=("تنظيف", plugin_category),
     info={

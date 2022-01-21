@@ -1,21 +1,21 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JM-THON >
+# This file is a part of < https://github.com/Sonic-AR/JM-THON >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # ===============================================================
 
 import random
-from Jmthon.razan.resources.strings import *
-from userbot import jmthon, CMD_HELP
-from userbot import jmthon
+from Sonic.razan.resources.strings import *
+from userbot import Sonic, CMD_HELP
+from userbot import Sonic
 from ..core.managers import edit_or_reply
 from ..helpers import get_user_from_event
 
 
-@jmthon.on(admin_cmd(pattern="رفع بقلبي(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع بقلبي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -28,7 +28,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع جوزي(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع جوزي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -42,7 +42,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع حمار(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع حمار(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -56,7 +56,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع مراتي(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع مراتي(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -70,7 +70,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع كلب(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع كلب(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -85,13 +85,13 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="كت(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="كت(?: |$)(.*)"))
 async def mention(mention):
     reza = random.choice(kttwerz)
     await edit_or_reply(mention, f"**- {reza}**")
 
 
-@jmthon.on(admin_cmd(pattern="هينه(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="هينه(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -103,7 +103,7 @@ async def permalink(mention):
     await edit_or_reply(mention, f"{sos} .")
 
 
-@jmthon.on(admin_cmd(pattern="نسبة الحب(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="نسبة الحب(?: |$)(.*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
@@ -116,7 +116,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="نسبة الانوثة(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="نسبة الانوثة(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -131,7 +131,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="نسبة الغباء(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="نسبة الغباء(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -143,7 +143,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع ملك(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع ملك(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -156,7 +156,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="رفع قرد(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="رفع قرد(?: |$)(.*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
@@ -171,7 +171,7 @@ async def permalink(mention):
     )
 
 
-@jmthon.on(admin_cmd(pattern="اوصف(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="اوصف(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -180,7 +180,7 @@ async def permalink(mention):
     rzona = random.choice(osfroz)
     await edit_or_reply(mention, f"{rzona}")
 
-@jmthon.on(admin_cmd(pattern="شغله(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="شغله(?: |$)(.*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:

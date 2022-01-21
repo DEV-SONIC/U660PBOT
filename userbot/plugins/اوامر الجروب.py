@@ -14,10 +14,10 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 #
-from userbot import jmthon
+from userbot import Sonic
 from telethon.tl.types import ChannelParticipantsKicked
 
-from userbot import jmthon, CMD_HELP
+from userbot import Sonic, CMD_HELP
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -40,7 +40,7 @@ BANNED_RIGHTS = ChatBannedRights(
 
 async def ban_user(chat_id, i, rights):
     try:
-        await jmthon(functions.channels.EditBannedRequest(chat_id, i, rights))
+        await Sonic(functions.channels.EditBannedRequest(chat_id, i, rights))
         return True, None
     except Exception as exc:
         return False, str(exc)
@@ -49,7 +49,7 @@ async def ban_user(chat_id, i, rights):
 
 
 
-@jmthon.on(admin_cmd(pattern="حذف المحظورين(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="حذف المحظورين(?: |$)(.*)"))
 async def _(event):
     await event.edit("**- يتم التعـرف انتـظر قليـلا من فضلك**")
     p = 0
@@ -74,7 +74,7 @@ async def _(event):
         return await edit_or_reply(
             event, "عذر ليس لديك الصلاحيات الكافية لاستخدام هذا الامر"
         )
-    jmthonevent = await edit_or_reply(event, "جـارِ")
+    Sonicevent = await edit_or_reply(event, "جـارِ")
     admins = await event.client.get_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     )
@@ -93,12 +93,12 @@ async def _(event):
         except Exception as e:
             LOGS.info(str(e))
             await sleep(0.5)
-    await jmthonevent.edit(
+    await Sonicevent.edit(
         f"- تم بنجاح التفليش  {success} من {total} الاعضاء"
     )
 
 
-@jmthon.on(admin_cmd(pattern="المحذوفين ?([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="المحذوفين ?([\s\S]*)"))
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
@@ -151,7 +151,7 @@ async def rm_deletedacc(show):
         )
 
 
-@jmthon.on(admin_cmd(pattern="احصائيات الاعضاء ?([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="احصائيات الاعضاء ?([\s\S]*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str:

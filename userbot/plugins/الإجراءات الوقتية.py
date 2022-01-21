@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidErr
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
@@ -17,7 +17,7 @@ NO_PERM = "**▾↫ عذرًا احتاج الى صلاحيات! **"
 
 
 
-@jmthon.on(admin_cmd(pattern="قيده(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="قيده(?:\s|$)([\s\S]*)"))
 async def tmuter(event):
     catevent = await edit_or_reply(event, "**▾∮ جاري** `┆تقييد┆` **المستخدم ✘ ...**")
     user, reason = await get_user_from_event(event, catevent)
@@ -74,7 +74,7 @@ async def tmuter(event):
         return await catevent.edit(f"`{str(e)}`")
 
 
-@jmthon.on(admin_cmd(pattern="احظره(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="احظره(?:\s|$)([\s\S]*)"))
 async def tban(event):
     "To ban a person for specific time"
     catevent = await edit_or_reply(event, "`banning....`")

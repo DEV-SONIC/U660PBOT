@@ -1,8 +1,8 @@
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd
-#jmthon 
+#Sonic 
 
-@jmthon.on(admin_cmd(pattern="خاص ?(.*)"))
+@Sonic.on(admin_cmd(pattern="خاص ?(.*)"))
 async def pmto(event):
     r = event.pattern_match.group(1)
     p = r.split(" ")

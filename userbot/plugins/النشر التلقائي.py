@@ -1,9 +1,9 @@
 from telethon import *
-from userbot import jmthon
+from userbot import Sonic
 from userbot.sql_helper.autopost_sql import add_post, get_all_post, is_post, remove_post
 from . import *
 
-@jmthon.on(admin_cmd(pattern="نشر_تلقائي ?(.*)"))
+@Sonic.on(admin_cmd(pattern="نشر_تلقائي ?(.*)"))
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "**- النشر التلقائي فقط للقنوات .")
@@ -20,7 +20,7 @@ async def _(event):
     await edit_or_reply(event, f"**- يتم بدء النشر التلقائي من ** `{trz_}`")
 
 
-@jmthon.on(admin_cmd(pattern="ايقاف_النشر ?(.*)"))
+@Sonic.on(admin_cmd(pattern="ايقاف_النشر ?(.*)"))
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "النشر التلقائي فقط للقنوات.")
@@ -37,7 +37,7 @@ async def _(event):
     await edit_or_reply(event, f"**- تم ايقاف النشر من ** `{trz_}`")
 
 
-@jmthon.ar_cmd(incoming=True)
+@Sonic.ar_cmd(incoming=True)
 async def _(event):
     if event.is_private:
         return

@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
 
 from userbot.utils import admin_cmd, sudo_cmd
-from userbot import LOGS, bot as jmthon
+from userbot import LOGS, bot as Sonic
 from userbot.helpers.functions import (
     convert_toimage,
     convert_tosticker,
@@ -45,8 +45,8 @@ async def crop(imagefile, endname, x):
     inverted_image.save(endname)
 
 
-@jmthon.on(admin_cmd(pattern="عكس اللون$", outgoing=True))
-@jmthon.on(sudo_cmd(pattern="عكس اللون$", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern="عكس اللون$", outgoing=True))
+@Sonic.on(sudo_cmd(pattern="عكس اللون$", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -129,7 +129,7 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="فلتر شمسي$"))
+@Sonic.on(admin_cmd(outgoing=True, pattern="فلتر شمسي$"))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -212,8 +212,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="عكس الصورة$"))
-@jmthon.on(sudo_cmd(pattern="عكس الصورة$", allow_sudo=True))
+@Sonic.on(admin_cmd(outgoing=True, pattern="عكس الصورة$"))
+@Sonic.on(sudo_cmd(pattern="عكس الصورة$", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -296,8 +296,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="قلب الصورة$"))
-@jmthon.on(sudo_cmd(pattern="قلب الصورة$", allow_sudo=True))
+@Sonic.on(admin_cmd(outgoing=True, pattern="قلب الصورة$"))
+@Sonic.on(sudo_cmd(pattern="قلب الصورة$", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -380,8 +380,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="فلتر رمادي$"))
-@jmthon.on(sudo_cmd(pattern="فلتر رمادي$", allow_sudo=True))
+@Sonic.on(admin_cmd(outgoing=True, pattern="فلتر رمادي$"))
+@Sonic.on(sudo_cmd(pattern="فلتر رمادي$", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -464,8 +464,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="زووم ?(.*)"))
-@jmthon.on(sudo_cmd(pattern="زووم ?(.*)", allow_sudo=True))
+@Sonic.on(admin_cmd(outgoing=True, pattern="زووم ?(.*)"))
+@Sonic.on(sudo_cmd(pattern="زووم ?(.*)", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -555,8 +555,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="اطار ?(.*)"))
-@jmthon.on(sudo_cmd(pattern="اطار ?(.*)", allow_sudo=True))
+@Sonic.on(admin_cmd(outgoing=True, pattern="اطار ?(.*)"))
+@Sonic.on(sudo_cmd(pattern="اطار ?(.*)", allow_sudo=True))
 async def memes(roz):
     if roz.fwd_from:
         return
