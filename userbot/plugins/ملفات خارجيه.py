@@ -6,14 +6,14 @@ from telethon.tl.types import InputMessagesFilterDocument
 from ..Config import Config
 from ..helpers.utils import install_pip
 from ..utils import load_module
-from . import BOTLOG, BOTLOG_CHATID, jmthon
+from . import BOTLOG, BOTLOG_CHATID, Sonic
 
 plugin_category = "tools"
 
 if Config.PLUGIN_CHANNEL:
 
     async def install():
-        documentss = await jmthon.get_messages(
+        documentss = await Sonic.get_messages(
             Config.PLUGIN_CHANNEL, None, filter=InputMessagesFilterDocument
         )
         total = int(documentss.total)
@@ -22,8 +22,8 @@ if Config.PLUGIN_CHANNEL:
             plugin_name = documentss[module].file.name
             if os.path.exists(f"userbot/plugins/{plugin_name}"):
                 return
-            downloaded_file_name = await jmthon.download_media(
-                await jmthon.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
+            downloaded_file_name = await Sonic.download_media(
+                await Sonic.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
                 "userbot/plugins/",
             )
             path1 = Path(downloaded_file_name)
@@ -40,11 +40,11 @@ if Config.PLUGIN_CHANNEL:
                     if check > 5:
                         break
             if BOTLOG:
-                await jmthon.send_message(
+                await Sonic.send_message(
                     BOTLOG_CHATID,
                     f"⌯︙تـم تـنصـيب المـلف `{os.path.basename(downloaded_file_name)}` بنجاح ✅.",
                 )
 
-    jmthon.loop.create_task(install())
+    Sonic.loop.create_task(install())
 
 # كـتابة  @RR7PP

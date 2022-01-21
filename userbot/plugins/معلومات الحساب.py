@@ -3,7 +3,7 @@ import time
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -35,7 +35,7 @@ def user_full_name(user):
     return " ".join(names)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="معلوماتي$",
     command=("معلوماتي", plugin_category),
 )
@@ -100,7 +100,7 @@ async def stats(event):  # sourcery no-metrics
     await cat.edit(response)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="جروباته(?:\s|$)([\s\S]*)",
     command=("جروباته", plugin_category),
     info={

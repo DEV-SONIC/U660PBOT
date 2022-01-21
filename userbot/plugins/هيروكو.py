@@ -1,4 +1,4 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 
 import asyncio
 import math
@@ -8,7 +8,7 @@ import heroku3
 import requests
 import urllib3
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -24,7 +24,7 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 
-@jmthon.on(admin_cmd(pattern="(اضف|جلب|حذف) فار ([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="(اضف|جلب|حذف) فار ([\s\S]*)"))
 async def variable(var):
     """
     Manage most of ConfigVars setting, set new var, get current var, or delete var...
@@ -94,7 +94,7 @@ async def variable(var):
         del heroku_var[variable]
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="استخدامي$",
     command=("استخدامي", plugin_category),
     info={
@@ -164,7 +164,7 @@ async def dyno_usage(dyno):
     )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="(herokulogs|الدخول)$",
     command=("الدخول", plugin_category),
     info={

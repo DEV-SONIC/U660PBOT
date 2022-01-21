@@ -3,7 +3,7 @@ import re
 
 import requests
 
-from userbot import CMD_HELP, jmthon
+from userbot import CMD_HELP, Sonic
 #
 try:
     from pyquery import PyQuery as pq
@@ -26,8 +26,8 @@ def get_download_url(link):
     return download_url
 
 
-@jmthon.on(admin_cmd(pattern="بينت?(.*)"))
-@jmthon.on(sudo_cmd(pattern="بينت?(.*)", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern="بينت?(.*)"))
+@Sonic.on(sudo_cmd(pattern="بينت?(.*)", allow_sudo=True))
 async def _(event):
     R = event.pattern_match.group(1)
     links = re.findall(r"\bhttps?://.*\.\S+", R)

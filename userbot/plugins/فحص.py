@@ -8,7 +8,7 @@ from telethon.errors.rpcerrorlist import (
     WebpageCurlFailedError,
     WebpageMediaEmptyError,
 )
-from userbot import JMVERSION, StartTime, jmthon
+from userbot import JMVERSION, StartTime, Sonic
 from ..core.managers import edit_or_reply
 from ..helpers.functions import check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
@@ -16,7 +16,7 @@ from ..sql_helper.globals import gvarstatus
 from ..Config import Config
 from . import *
 ALIVE_CMD = Config.ALIVE_CMD or "فحص"
-@jmthon.on(admin_cmd(pattern=f"{ALIVE_CMD}(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern=f"{ALIVE_CMD}(?: |$)(.*)"))
 async def amireallyalive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
@@ -28,8 +28,8 @@ async def amireallyalive(event):
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  - "
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت سونيك يعـمل بنـجـاح **"
     RR7_IMG = gvarstatus("ALIVE_PIC")
-    jmthon_caption = gvarstatus("ALIVE_TEMPLATE") or temp
-    caption = jmthon_caption.format(
+    Sonic_caption = gvarstatus("ALIVE_TEMPLATE") or temp
+    caption = Sonic_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
         EMOJI=EMOJI,
         mention=mention,
@@ -70,7 +70,7 @@ temp = """- {ALIVE_TEXT}
 **{EMOJI} المسـتخدم:** {mention}"""
 
 
-@jmthon.on(admin_cmd(pattern="امر فحص(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="امر فحص(?: |$)(.*)"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(ALIVERZ)

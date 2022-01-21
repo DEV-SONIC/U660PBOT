@@ -1,6 +1,6 @@
-from userbot import jmthon 
-@jmthon.on(admin_cmd(pattern=r"قول (.*)"))
-@jmthon.on(sudo_cmd(pattern=r"قول ( .*)", allow_sudo=True))
+from userbot import Sonic 
+@Sonic.on(admin_cmd(pattern=r"قول (.*)"))
+@Sonic.on(sudo_cmd(pattern=r"قول ( .*)", allow_sudo=True))
 async def _(event):
     bxt = Config.TG_BOT_USERNAME
     try:

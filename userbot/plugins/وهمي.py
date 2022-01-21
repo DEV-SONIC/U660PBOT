@@ -5,8 +5,8 @@ import aiohttp
 from telethon.errors import ChatAdminRequiredError as no_admin
 from telethon.tl.functions.messages import ExportChatInviteRequest
 
-from Jmthon.razan.resources.strings import *
-from userbot import jmthon
+from Sonic.razan.resources.strings import *
+from userbot import Sonic
 from userbot.utils import admin_cmd
 
 from ..core.managers import edit_or_reply
@@ -22,12 +22,12 @@ HAPPY NEW YEAR 2022
 ┃┗━┓┃┗┛┃┃┗━┓┃┗━┓
 ┗━━┛┗━━┛┗━━┛┗━━┛"""
 
-@jmthon.on(admin_cmd(pattern="2022"))
+@Sonic.on(admin_cmd(pattern="2022"))
 async def _(muhammad):
        await muhammad.edit(B)
 
 
-@jmthon.on(admin_cmd(pattern="كتابة(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="كتابة(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -45,7 +45,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="صوتية(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="صوتية(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -63,7 +63,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="فيد(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="فيد(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -81,7 +81,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="لعبة(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="لعبة(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -99,7 +99,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="الرابط$"))
+@Sonic.on(admin_cmd(pattern="الرابط$"))
 async def _(e):
     rr = await edit_or_reply(e, "**يتم جلب الرابط انتظر **")
     try:
@@ -111,23 +111,23 @@ async def _(e):
     await eod(rr, f"- رابط الدردشة\n {r.link}")
 
 
-@jmthon.on(admin_cmd(pattern="للكل تاك$"))
-async def listall(jmthon):
-    if jmthon.fwd_from:
+@Sonic.on(admin_cmd(pattern="للكل تاك$"))
+async def listall(Sonic):
+    if Sonic.fwd_from:
         return
     mentions = "- هذه هي قائمة جميع الاعضاء هنا: "
     chat = await bot.get_input_chat()
     async for x in borg.iter_participants(chat, 2000):
         mentions += f" \n[{x.first_name}](tg://user?id={x.id})"
-    await jmthon.reply(mentions)
-    await jmthon.delete()
+    await Sonic.reply(mentions)
+    await Sonic.delete()
 
 
 # don't kang the file your mother puusy
-# code by @jmthon
+# code by @Sonic
 
 
-@jmthon.on(admin_cmd(pattern="زواج(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="زواج(?:\s|$)([\s\S]*)"))
 async def rzfun(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -137,7 +137,7 @@ async def rzfun(mention):
     await edit_or_reply(mention, f"**اتجوزنا يلا نعمل واحد 🥺💞 ܰ**")
 
 
-@jmthon.on(admin_cmd(pattern="طلاق(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="طلاق(?:\s|$)([\s\S]*)"))
 async def mention(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -147,8 +147,8 @@ async def mention(mention):
     await edit_or_reply(mention, f"**طالق طالق بالعشرة 😹😭💕 ܰ**")
 
 
-@jmthon.on(admin_cmd(pattern="طقس (.*)"))
-@jmthon.on(sudo_cmd(pattern="طقس (.*)", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern="طقس (.*)"))
+@Sonic.on(sudo_cmd(pattern="طقس (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -194,9 +194,9 @@ async def _(event):
 
 import asyncio
 
-from jmthon.utils import admin_cmd
+from Sonic.utils import admin_cmd
 
-from userbot import jmthon
+from userbot import Sonic
 
 R = (
     "┈┈╱▔▔▔▔▔▔▔▔▔▔▔▏\n"
@@ -210,7 +210,7 @@ R = (
 )
 
 
-@jmthon.on(admin_cmd(pattern=r"سبونج"))
+@Sonic.on(admin_cmd(pattern=r"سبونج"))
 async def kerz(kerz):
     await kerz.edit(R)
 
@@ -226,7 +226,7 @@ async def kerz(kerz):
     )
 
 
-@jmthon.on(admin_cmd(pattern=r"كلب"))
+@Sonic.on(admin_cmd(pattern=r"كلب"))
 async def dog(dog):
     await dog.edit(A)
     Z = (
@@ -275,21 +275,21 @@ N = (
 )
 
 
-@jmthon.on(admin_cmd(pattern=r"ذئب"))
+@Sonic.on(admin_cmd(pattern=r"ذئب"))
 async def fox(fox):
     await fox.edit(A)
 
 
-@jmthon.on(admin_cmd(pattern=r"فيل"))
+@Sonic.on(admin_cmd(pattern=r"فيل"))
 async def elephant(elephant):
     await elephant.edit(A)
 
 
-@jmthon.on(admin_cmd(pattern=r"هومر"))
+@Sonic.on(admin_cmd(pattern=r"هومر"))
 async def homer(homer):
     await homer.edit(N)
 
 
-@jmthon.on(admin_cmd(pattern=r"بك"))
+@Sonic.on(admin_cmd(pattern=r"بك"))
 async def pig(pig):
     await pig.edit(Z)

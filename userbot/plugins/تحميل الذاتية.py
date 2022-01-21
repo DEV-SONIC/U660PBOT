@@ -1,11 +1,11 @@
 
 from userbot import *
-from userbot import jmthon
+from userbot import Sonic
 from ..Config import Config
 
-JMTHON_CMD = Config.SCPIC_CMD or "جلب الصورة"
+Sonic_CMD = Config.SCPIC_CMD or "جلب الصورة"
 
-@jmthon.on(admin_cmd(pattern=f"{JMTHON_CMD}"))
+@Sonic.on(admin_cmd(pattern=f"{Sonic_CMD}"))
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")

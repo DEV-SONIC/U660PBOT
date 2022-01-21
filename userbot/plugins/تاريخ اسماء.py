@@ -1,10 +1,10 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
@@ -13,7 +13,7 @@ from ..helpers.utils import _format
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تاريخ(معرفات)?(?: |$)(.*)",
     command=("تاريخ", plugin_category),
     info={

@@ -1,6 +1,6 @@
 # اذا تخمط اذكر الحقوق رجـاءا  -
 # كتابة وتعديل وترتيب  ~ @RR9R7
-# For ~ @Jmthon
+# For ~ @Sonic
 
 import asyncio
 import base64
@@ -17,7 +17,7 @@ from telethon.tl import functions
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import AUTONAME, DEFAULT_BIO, edit_delete, jmthon, logging
+from . import AUTONAME, DEFAULT_BIO, edit_delete, Sonic, logging
 
 plugin_category = "tools"
 
@@ -57,16 +57,16 @@ async def digitalpicloop():
         fnt = ImageFont.truetype(roz, 65)
         drawn_text.text((300, 400), current_time, font=fnt, fill=(280, 280, 280))
         img.save(autophoto_path)
-        file = await jmthon.upload_file(autophoto_path)
+        file = await Sonic.upload_file(autophoto_path)
         try:
             if i > 0:
-                await jmthon(
+                await Sonic(
                     functions.photos.DeletePhotosRequest(
-                        await jmthon.get_profile_photos("me", limit=1)
+                        await Sonic.get_profile_photos("me", limit=1)
                     )
                 )
             i += 1
-            await jmthon(functions.photos.UploadProfilePhotoRequest(file))
+            await Sonic(functions.photos.UploadProfilePhotoRequest(file))
             os.remove(autophoto_path)
             await asyncio.sleep(60)
         except BaseException:
@@ -86,7 +86,7 @@ async def autoname_loop():
         name = f"{RR7PP} {HM}"
         LOGS.info(name)
         try:
-            await jmthon(functions.account.UpdateProfileRequest(first_name=name))
+            await Sonic(functions.account.UpdateProfileRequest(first_name=name))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -106,7 +106,7 @@ async def autobio_loop():
         bio = f"{DEFAULTUSERBIO} {HI}"
         LOGS.info(bio)
         try:
-            await jmthon(functions.account.UpdateProfileRequest(about=bio))
+            await Sonic(functions.account.UpdateProfileRequest(about=bio))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -114,7 +114,7 @@ async def autobio_loop():
         AUTOBIOSTART = gvarstatus("autobio") == "true"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الصورة الوقتية$",
     command=("الصورة الوقتية", plugin_category),
 )
@@ -131,7 +131,7 @@ async def _(event):
     await digitalpicloop()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اسم وقتي$",
     command=("اسم وقتي", plugin_category),
 )
@@ -144,7 +144,7 @@ async def _(event):
     await autoname_loop()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بايو وقتي$",
     command=("بايو وقتي", plugin_category),
 )
@@ -157,7 +157,7 @@ async def _(event):
     await autobio_loop()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="انهاء ([\s\S]*)",
     command=("انهاء", plugin_category),
 )
@@ -203,6 +203,6 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-jmthon.loop.create_task(digitalpicloop())
-jmthon.loop.create_task(autoname_loop())
-jmthon.loop.create_task(autobio_loop())
+Sonic.loop.create_task(digitalpicloop())
+Sonic.loop.create_task(autoname_loop())
+Sonic.loop.create_task(autobio_loop())

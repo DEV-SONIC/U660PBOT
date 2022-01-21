@@ -1,13 +1,13 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 from covid import Covid
 
-from . import covidindia, edit_delete, edit_or_reply, jmthon
+from . import covidindia, edit_delete, edit_or_reply, Sonic
 
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="كورونا(?:\s|$)([\s\S]*)",
     command=("كورونا", plugin_category),
     info={

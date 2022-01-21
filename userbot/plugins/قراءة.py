@@ -1,11 +1,11 @@
 import os
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd, sudo_cmd
-#jmthon 
+#Sonic 
 
-@jmthon.on(admin_cmd(pattern=r"قراءة", outgoing=True))
-@jmthon.on(sudo_cmd(pattern=r"قراءة", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern=r"قراءة", outgoing=True))
+@Sonic.on(sudo_cmd(pattern=r"قراءة", allow_sudo=True))
 async def _(event):
     r = await event.client.download_media(await event.get_reply_message())
     a = open(r, "r")

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from ..Config import Config
 from ..utils import load_module, remove_plugin
-from . import CMD_HELP, CMD_LIST, SUDO_LIST, edit_delete, edit_or_reply, jmthon
+from . import CMD_HELP, CMD_LIST, SUDO_LIST, edit_delete, edit_or_reply, Sonic
 
 plugin_category = "tools"
 
@@ -12,7 +12,7 @@ DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ins$",
     command=("تنصيب", plugin_category),
     info={
@@ -48,7 +48,7 @@ async def install(event):
             os.remove(downloaded_file_name)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="uni (.*)",
     command=("الغاء التنصيب", plugin_category),
     info={

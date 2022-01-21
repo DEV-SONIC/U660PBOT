@@ -1,5 +1,5 @@
-# @RR7PP  - @SBB_B  - @JMTHON
-# Copyright (C) 2021 JMTHON TEAM
+# @RR7PP  - @SBB_B  - @Sonic
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 import asyncio
 import io
@@ -24,7 +24,7 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 from ..helpers.utils import _format
-from . import edit_delete, edit_or_reply, jmthon, progress, reply_id, ytsearch
+from . import edit_delete, edit_or_reply, Sonic, progress, reply_id, ytsearch
 
 plugin_category = "misc"
 
@@ -153,7 +153,7 @@ async def _get_file_name(path: pathlib.Path, full: bool = True) -> str:
     return str(path.absolute()) if full else path.stem + path.suffix
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تحميل ص(?: |$)(.*)",
     command=("تحميل ص", plugin_category),
     info={
@@ -221,7 +221,7 @@ async def download_audio(event):
     await catevent.delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تحميل ف(?: |$)(.*)",
     command=("تحميل ف", plugin_category),
     info={
@@ -286,7 +286,7 @@ async def download_video(event):
     await event.delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="نتائج(?: |$)(\d*)? ?(.*)",
     command=("نتائج", plugin_category),
     info={
@@ -322,7 +322,7 @@ async def yt_search(event):
     await edit_or_reply(video_q, reply_text)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="انستا (.*)",
     command=("انستا", plugin_category),
     info={

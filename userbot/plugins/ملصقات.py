@@ -18,7 +18,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
@@ -49,8 +49,8 @@ def verify_cond(catarray, text):
 
 def pack_name(userid, pack, is_anim):
     if is_anim:
-        return f"JMTHONBOT_{userid}_{pack}_anim"
-    return f"JMTHON_{userid}_{pack}"
+        return f"SonicBOT_{userid}_{pack}_anim"
+    return f"Sonic_{userid}_{pack}"
 
 
 def char_is_emoji(character):
@@ -217,12 +217,12 @@ async def add_to_pack(
     return pack, packname
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ملصق(?:\s|$)([\s\S]*)",
     command=("ملصق", plugin_category),
 )
 async def kang(args):
-    "jmthon userbot"
+    "Sonic userbot"
     photo = None
     emojibypass = False
     is_anim = False
@@ -368,8 +368,8 @@ async def kang(args):
                 )
 
 
-@jmthon.on(admin_cmd(pattern="حزمة"))
-async def jmthonpkg(_):
+@Sonic.on(admin_cmd(pattern="حزمة"))
+async def Sonicpkg(_):
     roz = await _.get_reply_message()
     if not roz:
         return await edit_or_reply(_, "**- يجب عليك الرد على حزمة  .**")
@@ -395,7 +395,7 @@ async def jmthonpkg(_):
         )
     try:
         short_name = (await _.client(SuggestShortNameRequest(_packname))).short_name
-        jmthon_roz = await bot(
+        Sonic_roz = await bot(
             functions.stickers.CreateStickerSetRequest(
                 user_id=_.sender_id,
                 title=_packname,
@@ -407,10 +407,10 @@ async def jmthonpkg(_):
         LOGS.exception(er)
         return await edit_or_reply(_, str(er))
     await edit_or_reply(
-        _, f"**- تم اخذ الحزمه بنجاح ✓ \nالحزمه  → [اضغط هنا](https://t.me/addstickers/{jmthon_roz.set.short_name})**")
+        _, f"**- تم اخذ الحزمه بنجاح ✓ \nالحزمه  → [اضغط هنا](https://t.me/addstickers/{Sonic_roz.set.short_name})**")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="معلومات_الملصق$",
     command=("معلومات_الملصق", plugin_category),
     info={

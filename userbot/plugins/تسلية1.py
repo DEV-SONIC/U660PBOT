@@ -1,12 +1,12 @@
 import asyncio
 from collections import deque
 
-from . import ALIVE_NAME, edit_or_reply, jmthon
+from . import ALIVE_NAME, edit_or_reply, Sonic
 
 plugin_category = "fun"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="غبي$",
     command=("غبي", plugin_category),
     info={
@@ -40,7 +40,7 @@ async def _(event):
         await event.edit(animation_chars[i % 14])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="القنابل$",
     command=("القنابل", plugin_category),
     info={
@@ -73,7 +73,7 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اتصل$",
     command=("اتصل", plugin_category),
     info={
@@ -111,7 +111,7 @@ async def _(event):
         await event.edit(animation_chars[i % 18])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="قتل$",
     command=("قتل", plugin_category),
     info={
@@ -143,7 +143,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="وه$",
     command=("وه", plugin_category),
     info={
@@ -168,7 +168,7 @@ async def _(event):
         await event.edit(animation_chars[i % 5], link_preview=True)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="طوبة$",
     command=("طوبة", plugin_category),
     info={
@@ -198,7 +198,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مربعات$",
     command=("مربعات", plugin_category),
     info={
@@ -233,7 +233,7 @@ async def _(event):
         await event.edit(animation_chars[i % 15])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="حلويات$",
     command=("حلويات", plugin_category),
     info={
@@ -251,7 +251,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="نار$",
     command=("نار", plugin_category),
     info={
@@ -277,7 +277,7 @@ async def _(event):
     await event.edit("يلاا احـركه حـرك بسـرعه 🔥🔥🔥")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="شحن$",
     command=("شحن", plugin_category),
     info={

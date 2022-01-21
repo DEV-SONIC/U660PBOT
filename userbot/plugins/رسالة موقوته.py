@@ -1,13 +1,13 @@
 from asyncio import sleep
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.core.logger import logging
 
 plugin_category = "tools"
 LOGS = logging.getLogger(__name__)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مؤقت (\d*) ([\s\S]*)",
     command=("مؤقت", plugin_category),
     info={

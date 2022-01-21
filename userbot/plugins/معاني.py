@@ -1,14 +1,14 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import sudo_cmd
 
 from ..helpers.utils import reply_id
-#jmthon 
+#Sonic 
 
-@jmthon.on(admin_cmd(pattern="معنى ?(.*)"))
-@jmthon.on(sudo_cmd(pattern="معنى ?(.*)", allow_sudo=True))
+@Sonic.on(admin_cmd(pattern="معنى ?(.*)"))
+@Sonic.on(sudo_cmd(pattern="معنى ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

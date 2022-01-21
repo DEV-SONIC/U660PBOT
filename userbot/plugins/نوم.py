@@ -1,4 +1,4 @@
-# JMTHON - @RR9R7 - @GGGNE
+# Sonic - @RR9R7 - @GGGNE
 # L E O - M U H A M M E D
 
 
@@ -7,7 +7,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.logger import logging
@@ -19,7 +19,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "utils"
 
 LOGS = logging.getLogger(__name__)
-# JMTHON - RR9R7 - GGGNE
+# Sonic - RR9R7 - GGGNE
 # L E O - M U H A M M E D
 
 
@@ -40,7 +40,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@jmthon.ar_cmd(outgoing=True, edited=False)
+@Sonic.ar_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -86,11 +86,11 @@ async def set_not_afk(event):
             )
 
 
-# JMTHON - RR9R7 - GGGNE
+# Sonic - RR9R7 - GGGNE
 # L E O - M U H A M M E D
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):  # sourcery no-metrics
@@ -179,11 +179,11 @@ async def on_afk(event):  # sourcery no-metrics
             )
 
 
-# JMTHON - RR9R7 - GGGNE
+# Sonic - RR9R7 - GGGNE
 # L E O - M U H A M M E D
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="نوم(?:\s|$)([\s\S]*)",
     command=("نوم", plugin_category),
     info={

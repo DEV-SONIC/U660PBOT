@@ -1,10 +1,10 @@
 import re
 
 from telethon.utils import get_display_name
-from userbot import jmthon
+from userbot import Sonic
 from ..core.managers import edit_or_reply
 from ..sql_helper import blacklist_sql as sql
-@jmthon.ar_cmd(incoming=True, groups_only=True)
+@Sonic.ar_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
@@ -23,7 +23,7 @@ async def on_new_message(event):
             break
 
 
-@jmthon.on(admin_cmd(pattern="منع(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="منع(?:\s|$)([\s\S]*)"))
 async def _(event):
     text = event.pattern_match.group(1)
     to_blacklist = list(
@@ -40,7 +40,7 @@ async def _(event):
     )
 
 
-@jmthon.on(admin_cmd(pattern="الغاء منع(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="الغاء منع(?:\s|$)([\s\S]*)"))
 async def _(event):
     text = event.pattern_match.group(1)
     to_unblacklist = list(
@@ -56,7 +56,7 @@ async def _(event):
     )
 
 
-@jmthon.on(admin_cmd(pattern="قائمة المنع$"))
+@Sonic.on(admin_cmd(pattern="قائمة المنع$"))
 async def _(event):
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
     OUT_JM = "**▾∮ اليكَ قائمة الكلمات الممنوعة 📝 ↶\n\n"

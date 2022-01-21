@@ -1,6 +1,6 @@
 import random
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from . import fonts
@@ -8,7 +8,7 @@ from . import fonts
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة1(?:\s|$)([\s\S]*)",
     command=("زخرفة1", plugin_category),
 )
@@ -31,7 +31,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة2(?:\s|$)([\s\S]*)",
     command=("زخرفة2", plugin_category),
 )
@@ -54,7 +54,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة3(?:\s|$)([\s\S]*)",
     command=("زخرفة3", plugin_category),
 )
@@ -82,7 +82,7 @@ async def vapor(event):
     await edit_or_reply(event, "".join(reply_text))
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة4(?:\s|$)([\s\S]*)",
     command=("زخرفة4", plugin_category),
 )
@@ -105,7 +105,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة5(?:\s|$)([\s\S]*)",
     command=("زخرفة5", plugin_category),
 )
@@ -128,7 +128,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة6(?:\s|$)([\s\S]*)",
     command=("زخرفة6", plugin_category),
 )
@@ -151,7 +151,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة7(?:\s|$)([\s\S]*)",
     command=("زخرفة7", plugin_category),
 )
@@ -174,7 +174,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة8(?:\s|$)([\s\S]*)",
     command=("زخرفة8", plugin_category),
 )
@@ -197,7 +197,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة9(?:\s|$)([\s\S]*)",
     command=("زخرفة9", plugin_category),
 )
@@ -220,7 +220,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة10(?:\s|$)([\s\S]*)",
     command=("زخرفة10", plugin_category),
 )
@@ -243,7 +243,7 @@ async def stylish_generator(event):
     await edit_or_reply(event, string)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="زخرفة0(?:\s|$)([\s\S]*)",
     command=("زخرفة0", plugin_category),
 )

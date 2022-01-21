@@ -1,16 +1,16 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 
 import io
 import sys
 import traceback
 
-from . import edit_or_reply, jmthon
+from . import edit_or_reply, Sonic
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="حساب ([\s\S]*)",
     command=("حساب", plugin_category),
     info={

@@ -2,16 +2,16 @@ from userbot.utils import admin_cmd
 
 
 # Wespr File by  @u660p
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 @borg.on(admin_cmd(pattern="همسة ?(.*)"))
 async def wspr(event):
     if event.fwd_from:
         return
-    jmthonb = event.pattern_match.group(1)
+    Sonicb = event.pattern_match.group(1)
     rrrd7 = "@nnbbot"
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    tap = await bot.inline_query(rrrd7, jmthonb)
+    tap = await bot.inline_query(rrrd7, Sonicb)
     await tap[0].click(event.chat_id)
     await event.delete()
 

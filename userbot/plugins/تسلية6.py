@@ -1,5 +1,5 @@
 #  =============================
-#  == JMTHON - QHR_1  -  RR7PP =
+#  == Sonic - QHR_1  -  RR7PP =
 #  =============================
 
 
@@ -7,7 +7,7 @@ import asyncio
 import os
 import re
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -16,7 +16,7 @@ from . import changemymind, deEmojify, kannagen, moditweet, reply_id, trumptweet
 plugin_category = "fun"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ترامب(?:\s|$)([\s\S]*)",
     command=("ترامب", plugin_category),
     info={
@@ -47,7 +47,7 @@ async def nekobot(cat):
         os.remove(catfile)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="سونيك(?:\s|$)([\s\S]*)",
     command=("سونيك", plugin_category),
     info={
@@ -78,7 +78,7 @@ async def nekobot(cat):
         os.remove(catfile)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="بنر(?:\s|$)([\s\S]*)",
     command=("بنر", plugin_category),
     info={
@@ -108,7 +108,7 @@ async def nekobot(cat):
         os.remove(catfile)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="كانا(?:\s|$)([\s\S]*)",
     command=("كانا", plugin_category),
     info={
@@ -139,7 +139,7 @@ async def nekobot(cat):
         os.remove(catfile)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تويت(?:\s|$)([\s\S]*)",
     command=("تويت", plugin_category),
     info={

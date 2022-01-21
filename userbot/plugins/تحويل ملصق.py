@@ -1,11 +1,11 @@
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd
 
 
-@jmthon.on(admin_cmd(pattern="تحويل لملصق ?(.*)"))
+@Sonic.on(admin_cmd(pattern="تحويل لملصق ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -39,5 +39,5 @@ async def _(event):
             await event.client.send_message(event.chat_id, response.message)
 
 
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP

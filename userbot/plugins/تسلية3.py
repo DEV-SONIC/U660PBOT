@@ -1,12 +1,12 @@
 import asyncio
 from collections import deque
 
-from . import edit_delete, edit_or_reply, jmthon, mention
+from . import edit_delete, edit_or_reply, Sonic, mention
 
 plugin_category = "fun"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="نجمه$",
     command=("نجمه", plugin_category),
     info={
@@ -24,7 +24,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مكعبات$",
     command=("مكعبات", plugin_category),
     info={
@@ -42,7 +42,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مطر$",
     command=("مطر", plugin_category),
     info={
@@ -60,7 +60,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="deploy$",
     command=("deploy", plugin_category),
     info={
@@ -92,7 +92,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تفريغ(?: |$)(.*)",
     command=("تفريغ", plugin_category),
     info={
@@ -138,7 +138,7 @@ async def _(event):
             await event.edit(something_else)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="فليم$",
     command=("فليم", plugin_category),
     info={
@@ -550,13 +550,13 @@ _/)______./¯"""/') ___/)___/)__,-----------’)_• ___/)_/)__./¯/)/)
 ]
 
 
-@jmthon.on(admin_cmd(pattern="احبك"))
-async def rz(jmthon):
+@Sonic.on(admin_cmd(pattern="احبك"))
+async def rz(Sonic):
     roz = random.choice(love)
-    return await edit_or_reply(jmthon, roz)
+    return await edit_or_reply(Sonic, roz)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="طائره$",
     command=("طائره", plugin_category),
     info={
@@ -584,7 +584,7 @@ async def _(event):
     await asyncio.sleep(3)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="شرطه$",
     command=("شرطه", plugin_category),
     info={
@@ -616,7 +616,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="jio$",
     command=("jio", plugin_category),
     info={
@@ -655,7 +655,7 @@ async def _(event):
         await event.edit(animation_chars[i % 19])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="النظام الشمسي$",
     command=("النظام الشمسي", plugin_category),
     info={

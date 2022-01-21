@@ -5,7 +5,7 @@ from telethon.tl.types import ChatBannedRights
 
 from ..sql_helper import antiflood_sql as sql
 from ..utils import is_admin
-from . import edit_or_reply, jmthon
+from . import edit_or_reply, Sonic
 
 plugin_category = "admin"
 CHAT_FLOOD = sql.__load_flood_settings()
@@ -15,7 +15,7 @@ ANTI_FLOOD_WARN_MODE = ChatBannedRights(
 )
 
 
-@jmthon.ar_cmd(incoming=True, groups_only=True)
+@Sonic.ar_cmd(incoming=True, groups_only=True)
 async def _(event):
     if not CHAT_FLOOD:
         return
@@ -51,7 +51,7 @@ async def _(event):
         )
 
 
-@jmthon.on(admin_cmd(pattern="ضع تكرار(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="ضع تكرار(?: |$)(.*)"))
 async def _(event):
     "لوضع عدد تكرار الرسائل في المجموعة"
     input_str = event.pattern_match.group(1)

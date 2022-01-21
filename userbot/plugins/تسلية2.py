@@ -1,12 +1,12 @@
 import asyncio
 from collections import deque
 
-from . import edit_or_reply, jmthon
+from . import edit_or_reply, Sonic
 
 plugin_category = "fun"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="افكر$",
     command=("افكر", plugin_category),
     info={
@@ -24,7 +24,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="متت$",
     command=("متت", plugin_category),
     info={
@@ -42,7 +42,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مخنوق$",
     command=("مخنوق", plugin_category),
     info={
@@ -60,7 +60,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="ساعه$",
     command=("ساعه", plugin_category),
     info={
@@ -78,7 +78,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="مح$",
     command=("مح", plugin_category),
     info={
@@ -96,7 +96,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="قلب$",
     command=("قلب", plugin_category),
     info={
@@ -114,7 +114,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="جيم$",
     command=("جيم", plugin_category),
     info={
@@ -132,7 +132,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الارض$",
     command=("الارض", plugin_category),
     info={
@@ -150,7 +150,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="قمر$",
     command=("قمر", plugin_category),
     info={
@@ -168,7 +168,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="اقمار$",
     command=("اقمار", plugin_category),
     info={
@@ -197,7 +197,7 @@ async def _(event):
         await event.edit(animation_chars[i % 8])
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="قمور$",
     command=("قمور", plugin_category),
     info={

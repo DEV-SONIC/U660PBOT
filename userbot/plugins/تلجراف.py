@@ -8,7 +8,7 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 from telethon.utils import get_display_name
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.logger import logging
@@ -29,7 +29,7 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="(ت(ل)?ج(راف)?) ?(m|t|ميديا|نص)(?:\s|$)([\s\S]*)",
     command=("تلجراف", plugin_category),
     info={

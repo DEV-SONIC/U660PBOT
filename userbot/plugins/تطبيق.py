@@ -7,12 +7,12 @@ Fetch App Details from Playstore.
 import bs4
 import requests
 
-from . import ALIVE_NAME, edit_or_reply, jmthon
+from . import ALIVE_NAME, edit_or_reply, Sonic
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="app ([\s\S]*)",
     command=("app", plugin_category),
     info={

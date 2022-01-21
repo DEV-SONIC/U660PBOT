@@ -1,17 +1,17 @@
-# Copyright (C) 2021 JMTHON TEAM
+# Copyright (C) 2021 Sonic TEAM
 # FILES WRITTEN BY  @RR7PP
 import re
 
 from telethon import Button
 
 from ..Config import Config
-from . import edit_delete, jmthon, reply_id
+from . import edit_delete, Sonic, reply_id
 
 plugin_category = "tools"
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="لستة(?: |$)(.*)",
     command=("لستة", plugin_category),
     info={

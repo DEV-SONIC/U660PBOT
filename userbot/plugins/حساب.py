@@ -4,10 +4,10 @@ from telethon import *
 from userbot import *
 from userbot.utils import *
 
-from .. import jmthon
+from .. import Sonic
 
 
-@jmthon.ar_cmd(pattern="اسمه")
+@Sonic.ar_cmd(pattern="اسمه")
 async def rz(event):
     reply = await event.get_reply_message()
     if not reply:
@@ -18,7 +18,7 @@ async def rz(event):
     await event.respond(b)
 
 
-@jmthon.ar_cmd(pattern="معرفه ?(.*)")
+@Sonic.ar_cmd(pattern="معرفه ?(.*)")
 async def rz(event):
     ty = event.pattern_match.group(1)
     await event.edit("- يتم التعرف")
@@ -37,7 +37,7 @@ async def rz(event):
     await event.respond(f"{c}@{b}")
 
 
-@jmthon.ar_cmd(pattern="التكرار")
+@Sonic.ar_cmd(pattern="التكرار")
 async def rz(event):
     for h in range(10000):
         ab = await event.get_reply_message()
@@ -50,19 +50,19 @@ async def rz(event):
             await bot.send_message(event.chat_id, dc)
 
 
-@jmthon.on(admin_cmd(pattern="رسائلي"))
+@Sonic.on(admin_cmd(pattern="رسائلي"))
 async def _(event):
     a = await bot.get_messages(event.chat_id, 0, from_user="me")
     await event.edit(f"- مجموع رسائلك في المجموعة هي  {a.total}")
 
 
-@jmthon.on(admin_cmd(pattern="رسائل الجروب"))
+@Sonic.on(admin_cmd(pattern="رسائل الجروب"))
 async def _(event):
     b = await bot.get_messages(event.chat_id)
     await event.edit(f"- مجموع الرسائل في المجموعة هي  {b.total}")
 
 
-@jmthon.ar_cmd(pattern="رقمه")
+@Sonic.ar_cmd(pattern="رقمه")
 async def rzp(event):
     a = "+"
     reply = await event.get_reply_message()

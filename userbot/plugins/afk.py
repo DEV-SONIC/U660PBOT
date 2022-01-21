@@ -3,7 +3,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from userbot import jmthon, CMD_HELP
+from userbot import Sonic, CMD_HELP
 
 from ..Config import Config
 from ..core.logger import logging
@@ -32,7 +32,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@jmthon.ar_cmd(outgoing=True, edited=False)
+@Sonic.ar_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -78,7 +78,7 @@ async def set_not_afk(event):
             )
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):  # sourcery no-metrics
@@ -157,7 +157,7 @@ async def on_afk(event):  # sourcery no-metrics
             )
 
 
-@jmthon.on(admin_cmd(pattern="سليب(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="سليب(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To mark yourself as afk i.e. Away from keyboard"
     AFK_.USERAFK_ON = {}
@@ -208,7 +208,7 @@ async def _(event):
                 )
 
 
-@jmthon.on(admin_cmd(pattern="سليب_ميديا(?:\s|$)([\s\S]*)"))
+@Sonic.on(admin_cmd(pattern="سليب_ميديا(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To mark yourself as afk i.e. Away from keyboard (supports media)"
     reply = await event.get_reply_message()

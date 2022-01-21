@@ -4,7 +4,7 @@ from datetime import datetime
 
 import requests
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -13,7 +13,7 @@ from ..helpers import media_type
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="stt$",
     command=("stt", plugin_category),
     info={

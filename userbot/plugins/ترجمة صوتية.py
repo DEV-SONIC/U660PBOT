@@ -9,7 +9,7 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id
@@ -17,7 +17,7 @@ from . import deEmojify, reply_id
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تكلم(?:\s|$)([\s\S]*)",
     command=("تكلم", plugin_category),
     info={

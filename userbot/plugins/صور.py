@@ -1,7 +1,7 @@
 import os
 import shutil
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..helpers.google_image_download import googleimagesdownload
@@ -10,7 +10,7 @@ from ..helpers.utils import reply_id
 plugin_category = "misc"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="صور(?: |$)(\d*)? ?([\s\S]*)",
     command=("صور", plugin_category),
     info={
@@ -18,9 +18,9 @@ plugin_category = "misc"
         "description": "To search images in google. By default will send 3 images.you can get more images(upto 10 only by changing limit value as shown in usage and examples.",
         "usage": ["{tr}img <1-10> <query>", "{tr}img <query>"],
         "examples": [
-            "{tr}img 10 JMTHON",
-            "{tr}img JMTHON ",
-            "{tr}img 7 JMTHON ",
+            "{tr}img 10 Sonic",
+            "{tr}img Sonic ",
+            "{tr}img 7 Sonic ",
         ],
     },
 )

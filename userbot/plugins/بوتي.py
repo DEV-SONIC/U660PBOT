@@ -1,10 +1,10 @@
-from userbot import jmthon
+from userbot import Sonic
 from userbot.utils import admin_cmd
 
 from ..Config import Config
 
 
-@jmthon.on(admin_cmd(pattern="بوتي$"))
+@Sonic.on(admin_cmd(pattern="بوتي$"))
 async def _(event):
     if event.fwd_from:
         return

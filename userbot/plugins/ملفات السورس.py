@@ -1,4 +1,4 @@
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _catutils, yaml_format
@@ -6,7 +6,7 @@ from ..helpers.utils import _catutils, yaml_format
 plugin_category = "tools"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الملفات$",
     command=("الملفات", plugin_category),
     info={
@@ -23,7 +23,7 @@ async def _(event):
 
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="متى$",
     command=("متى", plugin_category),
     info={

@@ -1,21 +1,21 @@
-# @Jmthon - < https://t.me/Jmthon >
-# Copyright (C) 2021 - JMTHON-AR
+# @Sonic - < https://t.me/Sonic >
+# Copyright (C) 2021 - Sonic-AR
 # All rights reserved.
 #
-# This file is a part of < https://github.com/JMTHON-AR/JMTHON >
+# This file is a part of < https://github.com/Sonic-AR/Sonic >
 # Please read the GNU Affero General Public License in;
-# < https://github.com/JMTHON-AR/JM-THON/blob/master/LICENSE
+# < https://github.com/Sonic-AR/JM-THON/blob/master/LICENSE
 # ===============================================================
 
 import html
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import warns_sql as sql
 
 
-@jmthon.on(admin_cmd(pattern="تحذير(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="تحذير(?: |$)(.*)"))
 async def _(event):
     warn_reason = event.pattern_match.group(1)
     if not warn_reason:
@@ -46,7 +46,7 @@ async def _(event):
     await edit_or_reply(event, reply)
 
 
-@jmthon.on(admin_cmd(pattern="التحذيرات(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="التحذيرات(?: |$)(.*)"))
 async def _(event):
     reply_message = await event.get_reply_message()
     if not reply_message:
@@ -74,7 +74,7 @@ async def _(event):
     await event.edit(text)
 
 
-@jmthon.on(admin_cmd(pattern="حذف التحذير(?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="حذف التحذير(?: |$)(.*)"))
 async def _(event):
     reply_message = await event.get_reply_message()
     sql.reset_warns(reply_message.sender_id, event.chat_id)

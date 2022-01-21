@@ -18,7 +18,7 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location
 
-from userbot import jmthon
+from userbot import Sonic
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -29,7 +29,7 @@ LOGS = logging.getLogger(__name__)
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="المشرفين(?: |$)(.*)",
     command=("المشرفين", plugin_category),
     info={
@@ -84,7 +84,7 @@ async def _(event):
     await event.delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="البوتات(?: |$)(.*)",
     command=("البوتات", plugin_category),
     info={
@@ -126,7 +126,7 @@ async def _(event):
     await edit_or_reply(event, mentions)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="الاعضاء(?: |$)(.*)",
     command=("الاعضاء", plugin_category),
     info={
@@ -176,7 +176,7 @@ async def get_users(show):
     await edit_or_reply(catevent, mentions)
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="معلومات(?: |$)(.*)",
     command=("معلومات", plugin_category),
     info={

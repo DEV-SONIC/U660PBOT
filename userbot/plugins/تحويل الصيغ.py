@@ -1,4 +1,4 @@
-# Copyright  By  @JMTHON  © 2021
+# Copyright  By  @Sonic  © 2021
 # WRITE BY  @RR9R7 - @GGGNE
 
 import asyncio
@@ -7,7 +7,7 @@ import os
 import time
 from datetime import datetime
 
-from userbot import jmthon
+from userbot import Sonic
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import sudo_cmd
@@ -29,11 +29,11 @@ PATH = os.path.join("./temp", "temp_vid.mp4")
 
 thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 
-# Copyright  By  @JMTHON  © 2021
+# Copyright  By  @Sonic  © 2021
 # WRITE BY  @RR7PP
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تحويل صورة$",
     command=("تحويل صورة", plugin_category),
     info={
@@ -62,7 +62,7 @@ async def _(event):
     await output[0].delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تحويل ملصق$",
     command=("تحويل ملصق", plugin_category),
     info={
@@ -91,7 +91,7 @@ async def _(event):
     await output[0].delete()
 
 
-@jmthon.ar_cmd(
+@Sonic.ar_cmd(
     pattern="تحويل (mp3|voice)$",
     command=("تحويل", plugin_category),
     info={
@@ -203,7 +203,7 @@ async def _(event):
 
 
 
-@jmthon.on(admin_cmd(pattern="تحويل متحركة (?: |$)(.*)"))
+@Sonic.on(admin_cmd(pattern="تحويل متحركة (?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
