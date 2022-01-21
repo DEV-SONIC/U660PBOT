@@ -61,8 +61,8 @@ class Config(object):
     TI_FN = os.environ.get("TI_FN", None)
     TIME_JM = os.environ.get("TIME_JM", None)
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
-    JMTHON_START = os.environ.get("JMTHON_START", None)
-    PMPERMIT_TEXT_JMTHON = os.environ.get("PMPERMIT_TEXT_JMTHON", None)
+    Sonic_START = os.environ.get("Sonic_START", None)
+    PMPERMIT_TEXT_Sonic = os.environ.get("PMPERMIT_TEXT_Sonic", None)
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
     }
